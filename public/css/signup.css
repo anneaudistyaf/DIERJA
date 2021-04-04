@@ -1,0 +1,38 @@
+h1{
+    font-family: 'Cormorant Infant';
+    font-weight: bold;
+}
+
+/*
+.signup .btn-perusahaan {
+    background-image: url('../images/perusahaan.png');
+    color: white;
+    min-width: 150px;
+    min-height: 50px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.signup .btn-pengguna {
+    background-image: url('../images/pengguna.png');
+    color: white;
+    min-width: 150px;
+    min-height: 50px;
+    border-radius: 10px;
+}
+*/
+
+.modal-content {
+    background-image: url('../images/bg-login3.png');
+}
+
+.modal-header h3{
+    font-family: 'Cormorant Infant';
+    font-weight: bold;
+    margin: auto;
+}
+
+.modal button .btn-login {
+    background-color:#1B1F3C;
+    border-radius: 20px;
+}

@@ -61,7 +61,7 @@
 
         <ul class="list-unstyled mb-0">
           <li>
-            <a href="#!" class="text-light">Buat Portofolio</a>
+            <a href="#!" class="text-light">Buat CV</a>
           </li>
           <li>
             <a href="#!" class="text-light">Daftar Lowongan</a>
