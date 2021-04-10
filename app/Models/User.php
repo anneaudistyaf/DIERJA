@@ -21,6 +21,22 @@ class User extends Authenticatable
         'email',
         'password',
     ];
+    public function address()
+    {
+        return $this->hasOne(address::class);
+    }
+    public function cv()
+    {
+        return $this->hasOne(cv::class);
+    }
+    public function sharing_post()
+    {
+        return $this->hasOne(sharing_post::class);
+    }
+    public function comment()
+    {
+        return $this->hasOne(comment::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

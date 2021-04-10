@@ -17,5 +17,8 @@ use Illuminate\Support\Facades\Route;
     return view('homepage');
 });
 */
+
+// Route::view('/{path?}', 'test');
+Route::view('/test', 'test');
 Route::view('/', 'homepage')->name('homepage');
 Route::view('/signup', 'signup')->name('signup');
