@@ -85,7 +85,7 @@
             </div>
             <br>
             <div class="text-center">
-              <button type="button" class="btn btnlowongan btn-rounded btn-secondary">Lihat Lowongan</button>
+              <a href="{{route('lowongan')}}" class="btn btnlowongan btn-rounded btn-secondary" role="button" aria-pressed="true">Lihat Lowongan</a>
             </div>
         </div>
         <br><br><br>

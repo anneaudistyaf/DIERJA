@@ -1,0 +1,18 @@
+.card-button:hover {
+    background-color: blueviolet;
+}
+
+h1, h3 {
+    font-family: Poppins;
+    font-weight: bold;
+}
+
+.card-body a {
+    text-decoration: none;
+    color: black;
+}
+
+table a {
+    color: black;
+    text-align: center;
+}

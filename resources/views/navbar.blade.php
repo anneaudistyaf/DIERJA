@@ -25,13 +25,13 @@
 		        	<a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Beranda</a>
 		        </li>
 		        <li class="nav-item">
-		        	<a class="nav-link" href="#">Lowongan</a>
+		        	<a class="nav-link" href="{{route('lowongan')}}">Lowongan</a>
 		        </li>
 		        <li class="nav-item">
-		        	<a class="nav-link" href="#">Sharing</a>
+		        	<a class="nav-link" href="{{route('sharing')}}">Sharing</a>
 		        </li>
 		        <li class="nav-item">
-		         	<a class="nav-link" href="#">Pelatihan</a>
+		         	<a class="nav-link" href="{{route('pelatihan')}}">Pelatihan</a>
 		        </li>
       		</ul>
       		<form class="d-flex">

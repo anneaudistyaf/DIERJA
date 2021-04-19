@@ -1,0 +1,12 @@
+.detail-lowongan {
+    font-family: 'Cormorant Infant';
+    text-align: left;
+}
+.detail-lowongan img{
+    border-radius: 10%;
+}
+
+.modal-body h2{
+    font-family: Adamina;
+}
+

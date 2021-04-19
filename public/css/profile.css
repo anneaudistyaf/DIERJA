@@ -1,0 +1,34 @@
+
+.judul {
+    font-family: 'Cormorant SC';
+    font-weight: bold;
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+.button a:hover {
+    background-color: violet;
+}
+
+.card-body-profile{
+    font-family: 'Cormorant SC';
+    
+}
+.pekerjaan{
+    text-align: center;
+    background-color: #0D335D;
+    color: aliceblue;
+    
+    font-family: 'Cormorant SC';
+}
+
+.card-body-cv h3{
+    text-decoration: underline;
+    font-family: 'Cormorant SC';
+}
+.card-text-cv {
+    font-family: 'Cormorant SC';
+}

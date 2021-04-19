@@ -1,0 +1,22 @@
+.home-sharing a{
+    text-decoration: none;
+    color: white;
+}
+
+.home-sharing a:hover {
+    background-color: #B04AEC;
+    color: white;
+}
+
+.fa {
+    cursor: pointer;
+    user-select: none;
+}
+
+#heart-on{
+    display: none;
+}
+
+#heart-on .show{
+    display: none;
+}
