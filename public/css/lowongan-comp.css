@@ -1,0 +1,31 @@
+h3 {
+    font-family: Adamina;
+    font-weight: bold;
+}
+
+.card-body h5 {
+    font-weight: bold;
+}
+
+.card-body {
+    font-family: Poppins;
+}
+
+.card-body a {
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.text-center {
+    font-weight: bold;
+}
+
+.lowongan .card-footer {
+    background : linear-gradient(91.05deg, #5796FC 6.59%, #6FCDF7 96.8%);
+}
+
+.lowongan .card-footer a {
+    text-decoration: none;
+    color: #ffffff;
+}
+

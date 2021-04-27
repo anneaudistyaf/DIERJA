@@ -28,3 +28,6 @@ Route::view('/pelatihan', 'pelatihan')->name('pelatihan');
 Route::view('/detailpelatihan', 'detailpelatihan') ->name('detailpelatihan');
 Route::view('/sharing', 'sharing')->name('sharing');
 Route::view('/profile', 'profile')->name('profile');
+Route::view('/lowongan-perusahaan', 'lowongan-perusahaan')->name('lowongan perusahaan');
+Route::view('/lamaran', 'lamaran')->name('lamaran');
+Route::view('/formlowongan', 'formlowongan')->name('formlowongan');
