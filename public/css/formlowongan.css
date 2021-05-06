@@ -1,0 +1,11 @@
+.form-foto, .form-lowongan {
+    font-family: 'Cormorant Infant';
+}
+.judul h1 {
+    font-family: 'Cormorant SC';
+}
+
+.foto-lowongan img{
+    width: 90%;
+    height: 90%;
+}
