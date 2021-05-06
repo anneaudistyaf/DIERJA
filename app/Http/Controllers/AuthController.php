@@ -11,9 +11,9 @@ use Symfony\Component\Console\Input\Input;
 
 
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\Models\address;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\MessageBag;
@@ -102,6 +102,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/signup');
     }
 }
