@@ -54,6 +54,11 @@
 					<form class="d-flex">
 						<button class="btn-masuk" type="submit"><a href="{{route('signup')}}">Masuk</a></button>
 					</form>
+					@else
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route ('logout')}}">Logout</a>
+					</li>
+
 					@endif
 				</ul>
 
