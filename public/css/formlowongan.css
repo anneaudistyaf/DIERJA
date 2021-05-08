@@ -9,3 +9,8 @@
     width: 90%;
     height: 90%;
 }
+
+.btn-primary {
+    float: right;
+    background-color: #0D335D !important;
+}

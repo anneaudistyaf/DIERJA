@@ -15,6 +15,7 @@
 </head>
 <body>
     @include('navbar')
+    <br>
     <div class="judul">
         <div class="row">
             <div class="col-sm-1"></div>
@@ -30,7 +31,9 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
                 <div class="foto-lowongan">
-                    <img class="img-float" src="{{url('../images/marketing.png')}}">
+                    <div class="upload-foto text-center">
+                        <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail">
+                    </div>
                 </div>  
             </div>
             <div class="col-sm-4">
@@ -102,11 +105,32 @@
                         </div>
                     </div>
                 </form>
+                <br><br>
+                <button class="btn btn-primary">SIMPAN</button>
             </div>
             <div class="col-sm-3"></div>
         </div>
     </div>
     <br>
     @include('footer')
+
+    <script>
+        $(document).on("click", ".browse", function() {
+            var file = $(this).parents().find(".file");
+            file.trigger("click");
+          });
+          $('input[type="file"]').change(function(e) {
+            var fileName = e.target.files[0].name;
+            $("#file").val(fileName);
+          
+            var reader = new FileReader();
+            reader.onload = function(e) {
+              // get loaded data and render thumbnail.
+              document.getElementById("preview").src = e.target.result;
+            };
+            // read the image file as a data URL.
+            reader.readAsDataURL(this.files[0]);
+          });
+      </script>
 </body>
 </html>

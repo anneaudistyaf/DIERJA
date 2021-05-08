@@ -1,0 +1,13 @@
+@media (min-width: 992px){
+    .uploadfoto {
+        margin-top : 200px;
+    }
+}
+.edit-user {
+    font-family: 'Cormorant Infant';
+}
+
+.btn-primary {
+    background-color: #0D335D !important;
+    margin: auto;
+}

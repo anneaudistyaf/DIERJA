@@ -16,11 +16,11 @@
         <div class="row lamaran">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <h3>Pelamar Marketing</h3>
+                <h3 class="text-center">Pelamar Marketing</h3>
                 <br>
                 <div class="waiting">
                     <h5><u>Menunggu Konfirmasi</u></h5>
-                    <table>
+                    <table class="table-wait">
                         <tr>
                             <td>Nama</td>
                             <td> : </td>
@@ -32,9 +32,28 @@
                             <td>Tuna Rungu</td>
                         </tr>
                     </table>
+                    <br>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-success" type="button">Lihat Portofolio</button>
+                        <button class="btn btn-primary" type="button">Terima Lamaran</button>
+                        <button class="btn btn-danger" type="button">Tolak Lamaran</button>
+                    </div>
+                </div>
+                <br>
+                <div class="accept">
+                    <h5><u>Pelamar diterima</u></h5>
+                    <table class="table-acc">
+                        <tr>
+                            <td>Adam Supriyanto</td>
+                        </tr>
+                        <tr>
+                            <td class="text-muted">Lumpuh</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
+        <br>
         @include('footer')
     </body>
 </html>

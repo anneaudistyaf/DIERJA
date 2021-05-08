@@ -1,0 +1,17 @@
+.btn-primary {
+    background-color: #B04AEC !important;
+}
+
+.thead-light {
+    background-color: #C4C4C4 !important;
+    text-align: center;
+}
+
+.table-bordered {
+    border-color: black;
+    border-style: solid;
+}
+
+.btn-secondary {
+    background-color: #0D335D !important;
+}

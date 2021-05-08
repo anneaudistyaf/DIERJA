@@ -1,0 +1,16 @@
+h1 {
+    font-family: "Cormorant SC";
+}
+
+table {
+    font-family: "Cormorant Infant";
+    font-size: 20px;
+    font-weight: bolder;
+}
+table .title {
+    width: 200px;
+}
+
+.btn-primary {
+    background-color: #0D335D !important;
+}
