@@ -23,12 +23,12 @@
 <body>
     @include('navbar')
     <br>
-    <div class="signup">
+    <div class="signup" id="register-page">
         <div class="row">
             <div class="col-sm-4">
             </div>
             <div class="col-sm-4">
-                <form action="{{ route('register')}}" method="POST">
+                <form action="" method="post">
                     @csrf
                     <h1 class="text-center">DAFTAR</h1>
                     <div class="form-group">
@@ -64,10 +64,10 @@
                         <div class="text-muted text-center">Daftar sebagai</div>
                         <br><br>
                         <div class="col-sm-6 text-center">
-                            <button class="btn btn-primary border-secondary">Perusahaan</button>
+                            <button class="btn btn-primary border-secondary register-perusahaan">Perusahaan</button>
                         </div>
                         <div class="col-sm-6 text-center">
-                            <button class="btn btn-info border-secondary">Pengguna</button>
+                            <button class="btn btn-info border-secondary register-user">Pengguna</button>
                         </div>
                     </div>
                     <br>
@@ -94,7 +94,7 @@
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-7">
-                            <form method="POST" action="{{ route('login') }}">
+                            <form method="POST" action="{{ route('login') }}" id="regisForm">
                                 @csrf
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control border-secondary"
@@ -109,7 +109,7 @@
                                 <div class="text-center">
                                     <button class="btn border-secondary btn-login">Login</button>
                                     <br><br>
-                                    <p>Belum memiliki akun? <a href="{{route('signup')}}">SignUp</a></p>
+                                    <p>Belum memiliki akun? <a href="{{url('/register')}}">SignUp</a></p>
                                 </div>
                             </form>
                         </div>
@@ -121,6 +121,14 @@
     </div>
     <br>
     @include('footer')
+    <script>
+        $('.register-perusahaan').on('click',function(){
+   $('#register-page').find('#regisForm').attr('action',"/company/register")
+  });  
+        $('.register-user').on('click',function(){
+   $('#register-page').find('#regisForm').attr('action',"/register")
+  });
+    </script>
 </body>
 
 </html>

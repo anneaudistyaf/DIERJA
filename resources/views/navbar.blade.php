@@ -52,7 +52,7 @@
 					</li>
 					@else
 					<form class="d-flex">
-						<button class="btn-masuk" type="submit"><a href="{{route('signup')}}">Masuk</a></button>
+						<button class="btn-masuk" type="submit"><a href="{{url('/register')}}">Masuk</a></button>
 					</form>
 					@else
 					<li class="nav-item">
