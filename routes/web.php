@@ -38,6 +38,8 @@ Route::view('/formlowongan', 'formlowongan')->name('formlowongan');
 Route::view('/edit-perusahaan', 'edit-perusahaan')->name('edit-perusahaan');
 Route::view('/profile-perusahaan', 'profile-perusahaan')->name('profile-perusahaan');
 Route::view('/admin', 'admin')->name('admin');
+Route::view('/cvuser','cvuser')->name('cvuser');
+Route::view('/formcv','formcv')->name('formcv');
 Route::view('/tambah-pelatihan', 'tambah-pelatihan')->name('tambah-pelatihan');
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::post('/register', [App\Http\Controllers\AuthController::class, 'registerAction'])->name('register');
