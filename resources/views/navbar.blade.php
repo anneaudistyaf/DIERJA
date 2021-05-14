@@ -32,31 +32,46 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					@if(Auth::guard('company')->check())
+					<li class="nav-item">
+						<a class="nav-link" href="">Profile</a>
+					</li>
+					@elseif(Auth::guard('web')->check())
+					<li class="nav-item">
+						<a class="nav-link" href="{{route('profile')}}">Profile</a>
+					</li>
+
+					@endif
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Beranda</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('lowongan')}}">Lowongan</a>
 					</li>
+					@if(!Auth::guard('company')->check())
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('sharing')}}">Sharing</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('pelatihan')}}">Pelatihan</a>
 					</li>
-				</ul>
-				<ul class="d-flex">
-					@if(Auth::check())
+					@endif
+					@if(Auth::guard('web')->check())
 
 
 					<li class="nav-item">
 						<a class="nav-link" href="{{ route ('logout')}}">Logout</a>
 					</li>
+					@elseif(Auth::guard('company')->check())
+					<li class="nav-item">
+						<a class="nav-link" href="{{ route ('company.logout')}}">Logout</a>
+					</li>
+
 					@else
 					<form class="d-flex">
 						<button class="btn-masuk" type="submit"><a href="{{url('/register')}}">Masuk</a></button>
-					</form>
 
+					</form>
 					@endif
 				</ul>
 

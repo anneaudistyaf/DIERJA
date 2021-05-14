@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\address;
-use App\Models\User;
+
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\MessageBag;
 

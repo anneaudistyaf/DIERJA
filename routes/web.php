@@ -26,10 +26,11 @@ Route::view('/lowongan', 'lowongan')->name('lowongan');
 Route::view('/detaillowongan', 'detaillowongan')->name('detaillowongan');
 Route::view('/pelatihan', 'pelatihan')->name('pelatihan');
 Route::view('/detailpelatihan', 'detailpelatihan')->name('detailpelatihan');
-Route::view('/sharing', 'sharing')->name('sharing');
-Route::view('/profile', 'profile')->name('profile');
-Route::view('/edit-user', 'edit-user')->name('edit-user');
-Route::get('/register', [App\Http\Controllers\AuthController::class, 'register']);
+Route::get('/sharing', [\App\Http\Controllers\SharingController::class, 'index'])->name('sharing');
+Route::get('/profile/{id}', [App\Http\Controllers\User\UserProfile::class, 'index'])->name('profile');
+Route::get('/edit-user/{id}', [App\Http\Controllers\User\UserProfile::class, 'edit']);
+Route::post('/update-user/{id}', [App\Http\Controllers\User\UserProfile::class, 'Update'])->name('update.user');
+
 Route::get('/abcd', [App\Http\Controllers\AuthController::class, 'index']);
 Route::view('/lowongan-perusahaan', 'lowongan-perusahaan')->name('lowongan-perusahaan');
 Route::view('/lamaran', 'lamaran')->name('lamaran');
@@ -38,11 +39,8 @@ Route::view('/formlowongan', 'formlowongan')->name('formlowongan');
 Route::view('/edit-perusahaan', 'edit-perusahaan')->name('edit-perusahaan');
 Route::view('/profile-perusahaan', 'profile-perusahaan')->name('profile-perusahaan');
 Route::view('/admin', 'admin')->name('admin');
-Route::view('/cvuser','cvuser')->name('cvuser');
-Route::view('/formcv','formcv')->name('formcv');
 Route::view('/tambah-pelatihan', 'tambah-pelatihan')->name('tambah-pelatihan');
-Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
-Route::post('/register', [App\Http\Controllers\AuthController::class, 'registerAction'])->name('register');
+
 Route::get('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::post('user/register', [App\Http\Controllers\AuthController::class, 'registerAction'])->name('register');
 Route::get('/login', [App\Http\Controllers\AuthController::class, 'login']);
