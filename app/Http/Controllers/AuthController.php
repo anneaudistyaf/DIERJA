@@ -26,7 +26,7 @@ class AuthController extends Controller
         if (Auth::check()) {
             return redirect('/');
         } else {
-            return redirect('/signup');
+            return redirect('/register');
         }
     }
     protected function validatorUser(array $data)
@@ -78,7 +78,7 @@ class AuthController extends Controller
 
             return redirect('/register')->with('error_register')->withErrors([$validator]);
         }
-        return redirect('/')->with('success', 'Register Succes');
+        return redirect('/register')->with('success', 'Register Succes');
     }
 
     //login
@@ -92,10 +92,10 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/pelatihan');
+            return redirect('/');
             // dd(Auth::user()->user_id);
         } else {
-            return redirect('/signup')->with('error', 'Login Failed !');
+            return redirect('/register')->with('error', 'Login Failed !');
         }
     }
 

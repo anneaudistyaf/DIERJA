@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->char('gender')->nullable();
             $table->string('disabilitas')->nullable();
             $table->string('user_profile')->nullable();
+            $table->string('location')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

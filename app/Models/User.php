@@ -17,11 +17,21 @@ class User extends Authenticatable
      * @var array
      */
     protected $table = 'users';
+<<<<<<< Updated upstream
     protected $primarykey = 'id';
+=======
+    protected $primaryKey = 'user_id';
+>>>>>>> Stashed changes
     protected $fillable = [
         'name',
         'email',
         'password',
+        'date_of_birth',
+        'gender',
+        'disabilitas',
+        'user_profile',
+        'location',
+
     ];
     public function address()
     {
@@ -33,7 +43,7 @@ class User extends Authenticatable
     }
     public function sharing_post()
     {
-        return $this->hasOne(sharing_post::class);
+        return $this->hasMany(sharing_post::class);
     }
     public function comment()
     {

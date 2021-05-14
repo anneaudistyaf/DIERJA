@@ -21,7 +21,7 @@ class AuthCompanyController extends Controller
     }
     public function Showlogin()
     {
-        return view('signup');
+        return view('signupCompany');
     }
 
     protected function guard()
@@ -46,8 +46,8 @@ class AuthCompanyController extends Controller
 
             $company = new company;
             $company->company_name = $request->name;
-            $company->email_company = $request->email;
-            $company->password_company = bcrypt($request->password);
+            $company->email = $request->email;
+            $company->password = bcrypt($request->password);
 
             $company->save();
 
@@ -61,6 +61,7 @@ class AuthCompanyController extends Controller
         }
         return redirect('/company/')->with('success', 'Register Succes');
     }
+
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');

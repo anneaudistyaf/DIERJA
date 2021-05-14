@@ -28,7 +28,7 @@
             <div class="col-sm-4">
             </div>
             <div class="col-sm-4">
-                <form action="{{route('register')}}" method="post">
+                <form action="{{route('company.register')}}" method="post">
                     @csrf
                     <h1 class="text-center">DAFTAR</h1>
                     <div class="form-group">
@@ -60,24 +60,24 @@
                         </div>
                     </div>
                     <br>
-
                     <div class="row">
+
                         <div class="col-sm-12 text-center">
-                            <button class="btn btn-info border-secondary register-user">Register</button>
+                            <button class="btn btn-info border-secondary register-perusahaan">Register</button>
                         </div>
+
                     </div>
                     <br>
                     <div class="text-center">
                         Sudah memiliki akun? <a data-toggle="modal" id="login" href="#exampleModalCenter">Login</a>
                     </div>
-                    <br>
                 </form>
                 <div class="row">
-                    <div class="text-muted text-center">Daftar sebagai perusahaan</div>
+                    <div class="text-muted text-center">Daftar pengguna</div>
                     <br><br>
                     <div class="col-sm-12 text-center">
                         <a href="{{url('/company/register')}}">
-                            <button class="btn btn-primary border-secondary register-perusahaan">Perusahaan</button>
+                            <button class="btn btn-primary border-secondary register-perusahaan">pengguna</button>
                         </a>
                     </div>
 
@@ -101,7 +101,7 @@
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-7">
-                            <form method="POST" action="{{route('login')}}" id="regisLogin">
+                            <form method="POST" action="{{route('company.loginAction')}}" id="regisLogin">
                                 @csrf
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control border-secondary"
@@ -116,7 +116,7 @@
                                 <div class="text-center">
                                     <button class="btn border-secondary btn-login">Login</button>
                                     <br><br>
-                                    <p>Belum memiliki akun? <a href="{{url('/register')}}">SignUp</a></p>
+                                    <p>Belum memiliki akun? <a href="{{url('/company/register')}}">SignUp</a></p>
                                 </div>
                             </form>
                         </div>

@@ -38,7 +38,11 @@
 					</li>
 					@elseif(Auth::guard('web')->check())
 					<li class="nav-item">
+<<<<<<< Updated upstream
 						<a class="nav-link" href="{{route('profile')}}">Profile</a>
+=======
+						<a class="nav-link" href="{{route('profile',Auth::id())}}">Profile</a>
+>>>>>>> Stashed changes
 					</li>
 
 					@endif

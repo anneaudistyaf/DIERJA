@@ -30,7 +30,8 @@
             </div>
             <div class="col-sm-4">
                 <div class="button">
-                    <a class="btn btn-primary btn-link" href="" role="button">Edit Profile</a>
+                    <a class="btn btn-primary btn-link" href="{{url('/edit-user',Auth::id())}}" role="button">Edit
+                        Profile</a>
                 </div>
             </div>
         </div>

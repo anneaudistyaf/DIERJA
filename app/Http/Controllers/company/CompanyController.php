@@ -15,6 +15,6 @@ class CompanyController extends Controller
 
     public function index()
     {
-        return view('home'); //ss
+        return view('homepage'); //ss
     }
 }
