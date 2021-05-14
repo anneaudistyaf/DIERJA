@@ -1,0 +1,23 @@
+
+.card-body-profile{
+    font-family: 'Cormorant SC';
+    
+}
+
+
+.card-body-cv h3{
+    text-decoration: underline;
+    font-family: 'Cormorant SC';
+}
+.card-text-cv {
+    font-family: 'Cormorant SC';
+}
+
+
+.btn-light {
+    border-color: black !important;
+}
+
+.card {
+    border-color: black !important;
+}

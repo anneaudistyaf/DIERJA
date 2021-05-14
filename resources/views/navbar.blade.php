@@ -44,6 +44,8 @@
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('pelatihan')}}">Pelatihan</a>
 					</li>
+				</ul>
+				<ul class="d-flex">
 					@if(Auth::check())
 
 
@@ -54,10 +56,6 @@
 					<form class="d-flex">
 						<button class="btn-masuk" type="submit"><a href="{{url('/register')}}">Masuk</a></button>
 					</form>
-					@else
-					<li class="nav-item">
-						<a class="nav-link" href="{{ route ('logout')}}">Logout</a>
-					</li>
 
 					@endif
 				</ul>

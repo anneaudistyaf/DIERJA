@@ -86,11 +86,11 @@
                 console.error( error );
             } );
     </script>
-    <script>
+  <script>
         function myFunction(x) {
           x.classList.toggle("fa-heartbeat");
         }
-    </script>
+    </script>  
 </body>
 
 </html>
