@@ -19,6 +19,11 @@ class CreateCompaniesTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password', 255);
+            $table->string('profileImage')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('sektor')->nullable();
+            $table->text('alamat')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

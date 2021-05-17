@@ -15,14 +15,19 @@ class CreateCvsTable extends Migration
     {
         Schema::create('cvs', function (Blueprint $table) {
             $table->id('cv_id');
-            $table->string('keahlian');
-            $table->string('disabilitas');
-            $table->string('pengalaman_kerja');
-            $table->string('deskripsi_kerja');
-            $table->string('edukasi');
-            $table->date('tahun_kerja');
-            $table->string('skill');
-            $table->string('sosial_media');
+            $table->string('keahlian')->nullable();
+            $table->string('pengalamanKerja')->nullable();
+            $table->string('tahunAwalKerja')->nullable();
+            $table->string('tahunAkhirKerja')->nullable();
+            $table->text('deskripsiKerja')->nullable();
+            $table->string('edukasi')->nullable();
+            $table->string('edukasiTahunAwal')->nullable();
+            $table->string('edukasiTahunAkhir')->nullable();
+            $table->string('skill')->nullable();
+            $table->string('sosialMedia')->nullable();
+            $table->string('optionSosialMedia')->nullable();
+            $table->bigInteger('id')->unsigned()->nullable();
+            $table->foreign('id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

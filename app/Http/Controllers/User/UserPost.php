@@ -15,13 +15,14 @@ class UserPost extends Controller
 {
     public function post(Request $request)
     {
-        $validation = $validator = Validator::make($request->all(), [
+
+        $validator = Validator::make($request->all(), [
             'isisharing' => ['required'],
             'judulSharing' => ['required']
 
         ]);
         if ($validator->fails()) {
-            return redirect()->back()->with('errorMessage', 'failed upload!')->withErrors($validation);
+            return redirect()->back()->with('errorMessage', 'failed upload!')->withErrors($validator);
         }
 
         try {
@@ -29,12 +30,12 @@ class UserPost extends Controller
             $post = new sharing_post;
             $post->judul = $request->judulSharing;
             $post->konten = $request->isisharing;
-            $post->user_id = Auth::id();
+            $post->id = Auth::id();
             $post->save();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('errorMessage', 'failed upload!');
+            return redirect('/');
         }
         return redirect()->back()->with('SuccesMessage', 'Post Succes Full');
     }

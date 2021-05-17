@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\cv;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -17,10 +18,12 @@ class UserProfile extends Controller
     private $lokasi = [0 => 'Bogor', 1 => 'Bandung', 2 => 'Jakarta', 3 => 'Yogyakarta', 4 => 'Medan'];
     public function index($id)
     {
-
+        $ds = $this->disabilitas;
         $usr = User::find($id);
+        $cv = cv::where('id', $id)->first();
+        $lokasi = $this->lokasi;
         if (Auth::check()) {
-            return view('profile', compact('usr'));
+            return view('profile', compact('usr', 'ds', 'lokasi', 'cv'));
         } else {
             return redirect('/');
         }
@@ -68,9 +71,7 @@ class UserProfile extends Controller
                 $user->location = $request->lokasi;
                 $user->update();
 
-                // if (file_exists($path . $image)) {
-                //     unlink($path . $image);
-                // }
+
                 DB::commit();
             } else {
                 DB::beginTransaction();
@@ -86,6 +87,6 @@ class UserProfile extends Controller
             DB::rollBack();
             return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
         }
-        return redirect('/profile')->with('succes', 'Edit Success');
+        return redirect()->route('profile', $id)->with('succes', 'Edit Success');
     }
 }

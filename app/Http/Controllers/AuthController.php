@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\address;
-
+use App\Models\cv;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\MessageBag;
 
@@ -61,13 +61,13 @@ class AuthController extends Controller
         try {
             DB::beginTransaction();
 
+            $this->validatorUser($request->all())->validate();
 
             $user = new User;
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
-            $this->validatorUser($request->all())->validate();
-
+            $id = DB::getPdo()->lastInsertId();
             $user->save();
 
             DB::commit();
@@ -76,9 +76,10 @@ class AuthController extends Controller
             $output = $e->getMessage();
             $validator = $this->validatorUser($request->all())->validate();
 
-            return redirect('/register')->with('error_register')->withErrors([$validator]);
+            return redirect('User/register')->with('error_register')->withErrors([$validator]);
         }
-        return redirect('/register')->with('success', 'Register Succes');
+
+        return redirect('User/register')->with('success', 'Register Succes');
     }
 
     //login
@@ -95,7 +96,7 @@ class AuthController extends Controller
             return redirect('/');
             // dd(Auth::user()->user_id);
         } else {
-            return redirect('/register')->with('error', 'Login Failed !');
+            return redirect('User/register')->with('error', 'Login Failed !');
         }
     }
 

@@ -19,108 +19,117 @@
   @include('navbar')
   <br>
   <div class="row formcv">
-      <div class="col-md-4"></div>
-      <div class="col-md-7">
-          <div class="card">
-              <div class="card-header text-center">
-                  <h1>CURRICULUM VITAE</h1>
-              </div>
-              <div class="card-body">
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Keahlian</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput">
-                    </div>
-              </div>
-              <div class="card-body">
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Pengalaman Kerja</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput">
-                    </div>
-              </div>
-              <div class="card-body">
-                    <label for="formGroupExampleInput">Tahun</label>
-                    <div class="input-group mb-3">
-                        <select class="form-select form-control" id="inputGroupSelect03" >
-                            <option value="1">2015</option>
-                            <option value="2">2016</option>
-                            <option value="3">2017</option>
-                            <option value="4">2018</option>
-                            <option value="5">2019</option>
-                            <option value="6">2020</option>
-                            <option value="7">2021</option>
-                        </select>
-                        <select class="form-select form-control" id="inputGroupSelect03">
-                            <option value="1">2015</option>
-                            <option value="2">2016</option>
-                            <option value="3">2017</option>
-                            <option value="4">2018</option>
-                            <option value="5">2019</option>
-                            <option value="6">2020</option>
-                            <option value="7">2021</option>
-                        </select>
-                    </div>
-              </div>
-              <div class="card-body">
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Kerja</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Edukasi</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </div>
-              </div>
-              <div class="card-body">
-                <label for="formGroupExampleInput">Tahun</label>
-                <div class="input-group mb-3">
-                    <select class="form-select form-control" id="inputGroupSelect03" >
-                      <option selected>Dari</option>
-                      <option value="1">2015</option>
-                      <option value="2">2016</option>
-                      <option value="3">2017</option>
-                      <option value="4">2018</option>
-                      <option value="5">2019</option>
-                      <option value="6">2020</option>
-                      <option value="7">2021</option>
-                    </select>
-                    <select class="form-select form-control" id="inputGroupSelect03">
-                      <option value="1">2015</option>
-                      <option value="2">2016</option>
-                      <option value="3">2017</option>
-                      <option value="4">2018</option>
-                      <option value="5">2019</option>
-                      <option value="6">2020</option>
-                      <option value="7">2021</option>
-                    </select>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="form-group">
-                    <label for="formGroupExampleInput">Skill</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput">
-                </div>
-              </div>
-              <div class="card-body">
-                <label for="formGroupExampleInput">Sosial Media</label>
-                <div class="input-group">
-                    <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                    <div class="input-group-append">
-                      <select class="form-select form-control" id="inputGroupSelect03">
-                        <option selected>Sosial Media</option>
-                        <option value="1">Instagram</option>
-                        <option value="2">Facebook</option>
-                        <option value="3">Twitter</option>
-                      </select>
-                    </div>
-                </div>
-              </div>
-              <div class="card-body">
-                <a href="{{route('cvuser')}}" class="btn btn-primary">SIMPAN</a>
-              </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-7">
+      <div class="card">
+        <form action="{{route('add.cv')}}" method="POST">
+          @csrf
+          <div class="card-header text-center">
+            <h1>CURRICULUM VITAE</h1>
           </div>
+          <div class="card-body">
+
+            <div class="form-group">
+              <label for="formGroupExampleInput">Keahlian</label>
+              <input value="{{$cv->keahlian}}" name="keahlian" type="text" class="form-control"
+                id="formGroupExampleInput">
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="formGroupExampleInput">Pengalaman Kerja</label>
+              <input value="{{$cv->pengalamanKerja}}" name="pengalamanKerja" type="text" class="form-control"
+                id="formGroupExampleInput">
+            </div>
+          </div>
+          <div class="card-body">
+            <label for="formGroupExampleInput">Tahun</label>
+            <div class="input-group mb-3">
+              <select name="tahunAwalKerja" class="form-select form-control" id="inputGroupSelect03">
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+              </select>
+              <select name="tahunAkhirKerja" class="form-select form-control" id="inputGroupSelect03">
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Kerja</label>
+              <textarea value="{{$cv->deskripsiKerja}}" name="deskripsiKerja" class="form-control"
+                id="exampleFormControlTextarea1" rows="3">{{$cv->deskripsiKerja}}</textarea>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="formGroupExampleInput">Edukasi</label>
+              <input value="{{$cv->edukasi}}" name=" edukasi" type="text" class="form-control"
+                id="formGroupExampleInput">
+            </div>
+          </div>
+          <div class="card-body">
+            <label for="formGroupExampleInput">Tahun</label>
+            <div class="input-group mb-3">
+              <select name="edukasiTahunAwal" class="form-select form-control" id="inputGroupSelect03">
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+              </select>
+              <select name="edukasiTahunAkhir" class="form-select form-control" id="inputGroupSelect03">
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="formGroupExampleInput">Skill</label>
+              <input value="{{$cv->skill}}" name="skill" type="text" class="form-control" id="formGroupExampleInput">
+            </div>
+          </div>
+          <div class="card-body">
+            <label for="formGroupExampleInput">Sosial Media</label>
+            <div class="input-group">
+              <input value="{{$cv->sosialMedia}}" name="sosialMedia" type="text" class="form-control"
+                aria-label="Text input with dropdown button">
+              <div class="input-group-append">
+                <select name="optionSosialMedia" class="form-select form-control" id="inputGroupSelect03">
+                  <option selected>Sosial Media</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Facebook">Facebook</option>
+                  <option value="Twitter">Twitter</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <button class="btn btn-primary">SIMPAN</button>
+          </div>
+        </form>
       </div>
+    </div>
   </div>
 </body>
+
 </html>

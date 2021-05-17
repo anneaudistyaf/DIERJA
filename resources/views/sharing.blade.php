@@ -46,7 +46,7 @@
                     <div class="row">
 
                         <div class="col-sm-2 text-center">
-                            <img src="{{url('../images/profpic.png')}}" alt="">
+                            <img src="{{url('../profileImage/',)}}" alt="">
                         </div>
                         <div class="col-sm-10">
                             <div class="card-body">
@@ -96,7 +96,7 @@
                         <br>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Konten</label>
-                            <textarea name="isisharing" id="editor" cols="50" rows="10"></textarea>
+                            <textarea type="text" name="isisharing" id="editor" cols="50" rows="10"></textarea>
                             <br>
                         </div>
                         <button class="btn btn-primary">Kirim</button>
@@ -116,13 +116,6 @@
                 console.error( error );
             } );
     </script>
-<<<<<<< Updated upstream
-  <script>
-        function myFunction(x) {
-          x.classList.toggle("fa-heartbeat");
-        }
-    </script>  
-=======
     <script>
         function heart(x) {
           x.classList.toggle("fa-heartbeat");
@@ -148,7 +141,6 @@
      
 
     </script>
->>>>>>> Stashed changes
 </body>
 
 </html>

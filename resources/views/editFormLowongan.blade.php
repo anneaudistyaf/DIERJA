@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-8">
-                <h1>Edit Lowongan</h1>
+                <h1>Tambah</h1>
             </div>
             <div class="col-sm-3"></div>
         </div>

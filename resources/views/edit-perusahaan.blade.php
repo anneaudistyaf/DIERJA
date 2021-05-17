@@ -17,67 +17,77 @@
 <body>
   @include('navbar')
   <br>
-  <div class="row">
+  <form method="POST" action="{{route('company.update-perusahaan',$company->company_id)}}" id="image-form"
+    enctype="multipart/form-data">
+    @csrf
+    <div class="row">
       <div class="col-sm-3"></div>
       <div class="col-sm-6">
         <div class="upload-foto text-center">
-            <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail">
-            <form method="post" id="image-form">
-                <input type="file" name="img[]" class="file" accept="image/*">
-                <div class="input-group my-3">
-                <input type="text" class="form-control" disabled placeholder="No file choosen" id="file">
-                <div class="input-group-append">
-                    <button type="button" class="browse btn btn-secondary">Choose a file</button>
-                </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="col-sm-3"></div>
-</div>
-<div class="row">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
-        <div class="card">
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput">Nama Perusahaan</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput">
-                    </div><br>
-                    <div class="form-group">
-                      <label for="formGroupExampleInput2">Email</label>
-                      <input type="email" class="form-control" id="formGroupExampleInput2">
-                    </div><br>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Nomor Telpon</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2">
-                    </div><br>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Sektor</label>
-                        <select class="form-control pilih-sektor" id="FormCustomSelect">
-                            <option selected class="text-muted">Choose...</option>
-                            <option value="1">Food</option>
-                            <option value="2">Pertambangan</option>
-                            <option value="3">Perminyakan</option>
-                            <option value="4">Property</option>
-                        </select>
-                    </div><br>
-                    <div class="form-group">
-                        <label for="exampleTextarea">Alamat Perusahaan</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                    </div><br>
-                    <div class="form-group">
-                        <label for="exampleTextarea">Deskripsi Perusahaan Perusahaan</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="4"></textarea>
-                    </div><br>
-                    <a href="{{route('profile-perusahaan')}}" class="btn btn-primary">SIMPAN</button>
-                  </form>
+          <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail">
+          <input type="file" name="file" class="file" accept="image/*">
+          <div class="input-group my-3">
+            <input type="text" class="form-control" disabled placeholder="No file choosen" id="file">
+            <div class="input-group-append">
+              <button type="button" class="browse btn btn-secondary">Choose a file</button>
             </div>
+          </div>
+
         </div>
+      </div>
+      <div class="col-sm-3"></div>
     </div>
-    <div class="col-sm-2"></div>
-</div>
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Nama Perusahaan</label>
+                <input name="nama" value="{{$company->company_name}}" type="text" class="form-control"
+                  id="formGroupExampleInput">
+              </div><br>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Email</label>
+                <input name="email" value="{{$company->email}}" type="email" class="form-control"
+                  id="formGroupExampleInput2">
+              </div><br>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Nomor Telpon</label>
+                <input name="phone" value="{{$company->phone}}" type="text" class="form-control"
+                  id="formGroupExampleInput2">
+              </div><br>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Sektor</label>
+                <select name="sektor" class="form-control pilih-sektor" id="FormCustomSelect">
+                  <option selected class="text-muted">Choose...</option>
+                  <option value="food">Food</option>
+                  <option value="pertambangan">Pertambangan</option>
+                  <option value="perminyakan">Perminyakan</option>
+                  <option value="property">Property</option>
+                </select>
+              </div><br>
+              <div class="form-group">
+                <label for="exampleTextarea">Alamat Perusahaan</label>
+                <textarea name="alamat" class="form-control" id="exampleTextarea"
+                  rows="3">{{$company->alamat}}</textarea>
+              </div><br>
+              <div class="form-group">
+                <label for="exampleTextarea">Deskripsi Perusahaan Perusahaan</label>
+                <textarea name="deskripsi" class="form-control" id="exampleTextarea"
+                  rows="4">{{$company->deskripsi}}</textarea>
+              </div><br>
+              <div class="button-submit text-center">
+                <button class="btn btn-primary">SIMPAN</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </form>
   <br>
   @include('footer')
 
@@ -100,4 +110,5 @@
       });
   </script>
 </body>
+
 </html>

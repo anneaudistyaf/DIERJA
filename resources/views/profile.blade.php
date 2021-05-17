@@ -30,7 +30,8 @@
             </div>
             <div class="col-sm-4">
                 <div class="button">
-                    <a class="btn btn-primary btn-link" href="{{url('/edit-user',Auth::id())}}" role="button">Edit
+                    <a class="btn btn-primary btn-link" href="{{url('profile/edit-user',Auth::id())}}"
+                        role="button">Edit
                         Profile</a>
                 </div>
             </div>
@@ -41,15 +42,23 @@
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="{{url('../images/foto.png')}}" alt="..." style="max-width: 90%;">
+                            <img src="{{url('../profileImage/',$usr->user_profile)}}" alt="..." style="max-width: 90%;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body-profile">
                                 <h3 class="card-title">{{$usr->name}}</h5>
                                     <p class="card-text">18 Mei 1995</p>
-                                    <p class="card-text">Perempuan</p>
-                                    <p class="card-text">Tuna Rungu</p>
-                                    <p class="card-text"><img src="{{url('../images/place.png')}}" alt="">Bogor</p>
+                                    <p class="card-text">{{$usr->gender}}</p>
+                                    @foreach ($ds as $key =>$value)
+                                    @if($usr->disabilitas == $key)
+                                    <p class="card-text">{{$value}}</p>
+                                    @endif
+                                    @endforeach
+                                    @foreach ($lokasi as $key => $value)
+                                    @if($usr->location == $key)
+                                    <p class="card-text"><img src="{{url('../images/place.png')}}" alt="">{{$value}}</p>
+                                    @endif
+                                    @endforeach
                             </div>
                         </div>
                     </div>
@@ -68,7 +77,8 @@
             </div>
             <div class="col-sm-4">
                 <div class="button">
-                    <a class="btn btn-primary btn-link" href="" role="button">Edit CV</a>
+                    <a class="btn btn-primary btn-link" href="{{url('profile/edit-cv',Auth::id())}}" role="button">Edit
+                        CV</a>
                 </div>
             </div>
         </div>

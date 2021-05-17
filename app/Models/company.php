@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use Laravel\Sanctum\HasApiTokens;
 
 class company extends Authenticatable
 {
+    use HasApiTokens;
     use Notifiable;
     use HasFactory;
     protected $table = 'companies';

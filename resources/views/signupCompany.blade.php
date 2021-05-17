@@ -76,7 +76,7 @@
                     <div class="text-muted text-center">Daftar pengguna</div>
                     <br><br>
                     <div class="col-sm-12 text-center">
-                        <a href="{{url('/company/register')}}">
+                        <a href="{{url('User/register')}}">
                             <button class="btn btn-primary border-secondary register-perusahaan">pengguna</button>
                         </a>
                     </div>

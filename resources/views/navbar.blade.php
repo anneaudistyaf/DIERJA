@@ -34,15 +34,12 @@
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					@if(Auth::guard('company')->check())
 					<li class="nav-item">
-						<a class="nav-link" href="">Profile</a>
+						<a class="nav-link"
+							href="{{url('/company/profile-perusahaan',Auth::guard('company')->user()->company_id)}}">Profile</a>
 					</li>
 					@elseif(Auth::guard('web')->check())
 					<li class="nav-item">
-<<<<<<< Updated upstream
-						<a class="nav-link" href="{{route('profile')}}">Profile</a>
-=======
 						<a class="nav-link" href="{{route('profile',Auth::id())}}">Profile</a>
->>>>>>> Stashed changes
 					</li>
 
 					@endif
@@ -73,7 +70,7 @@
 
 					@else
 					<form class="d-flex">
-						<button class="btn-masuk" type="submit"><a href="{{url('/register')}}">Masuk</a></button>
+						<button class="btn-masuk" type="submit"><a href="{{url('User/register')}}">Masuk</a></button>
 
 					</form>
 					@endif
