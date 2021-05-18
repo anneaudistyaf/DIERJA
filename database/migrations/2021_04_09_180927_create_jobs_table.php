@@ -15,7 +15,11 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->id('jobs_id');
-            $table->string('jobs_description');
+            $table->string('posisi');
+            $table->string('disabilitas');
+            $table->string('lokasi');
+            $table->string('waktu');
+            $table->longText('jobs_description');
             $table->bigInteger('company_id')->unsigned();
             $table->foreign('company_id')->references('company_id')->on('companies')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

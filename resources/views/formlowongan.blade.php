@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-8">
-                <h1>Edit Lowongan</h1>
+                <h1>Tambah Lowongan</h1>
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -35,14 +35,14 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
-                <div class="foto-lowongan">
+                {{-- <div class="foto-lowongan">
                     <div class="upload-foto text-center">
                         <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail">
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-sm-4">
-                <form>
+                {{-- <form>
                     <div class="form-group">
                         <br>
                         <label for="exampleFormControlFile1">Change Profile Picture</label> <br>
@@ -50,7 +50,7 @@
                         <p>Acceptable formt : jpg & png only
                             max size is 2mb and min size is 300kb</p>
                     </div>
-                </form>
+                </form> --}}
             </div>
             <div class="col-sm-2"></div>
         </div>
@@ -60,22 +60,24 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-8">
                 <br>
-                <form>
+                <form action="{{route('company.add.lowongan-perusahaan')}}" method="POST">
+                    @csrf
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Posisi Pekerjaan</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Marketing">
+                            <input name="posisi" type="text" class="form-control" id="inputPassword"
+                                placeholder="Marketing">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Disabilities</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Tuna rungu</option>
-                                <option>Tuna wicara</option>
-                                <option>Lumpuh</option>
-                                <option>Disleksia</option>
+                            <select name="disabilitas" class="form-control" id="exampleFormControlSelect1">
+                                <option value="Tuna Rungu">Tuna rungu</option>
+                                <option value="Tuna Wicara">Tuna wicara</option>
+                                <option value="Lumpuh">Lumpuh</option>
+                                <option value="Disleksia">Disleksia</option>
                             </select>
                         </div>
                     </div>
@@ -83,22 +85,23 @@
                     <div class="form-group row">
                         <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Location</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Bogor</option>
-                                <option>Jakarta</option>
-                                <option>Bandung</option>
-                                <option>Yogyakarta</option>
-                                <option>Medan</option>
+                            <select name="lokasi" class="form-control" id="exampleFormControlSelect1">
+                                <option value="bogor">Bogor</option>
+                                <option value="jakarta">Jakarta</option>
+                                <option value="bandung">Bandung</option>
+                                <option value="yogyakarta">Yogyakarta</option>
+                                <option value="medan">Medan</option>
                             </select>
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
+
                         <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Waktu</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="exampleFormControlSelect1">
-                                <option>Part-Time</option>
-                                <option>Full-Time</option>
+                            <select name="waktu" class="form-control" id="exampleFormControlSelect1">
+                                <option value="part-time">Part-Time</option>
+                                <option value="full-time">Full-Time</option>
                             </select>
                         </div>
                     </div>
@@ -107,12 +110,15 @@
                         <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Deskripsi dan
                             Syarat</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea name="jobs_description" class="form-control" id="exampleFormControlTextarea1"
+                                rows="3"></textarea>
                         </div>
                     </div>
+                    <br><br>
+                    <div class="button-submit text-center">
+                        <button class="btn btn-primary">SIMPAN</button>
+                    </div>
                 </form>
-                <br><br>
-                <button class="btn btn-primary">SIMPAN</button>
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -120,7 +126,7 @@
     <br>
     @include('footer')
 
-    <script>
+    {{-- <script>
         $(document).on("click", ".browse", function() {
             var file = $(this).parents().find(".file");
             file.trigger("click");
@@ -137,7 +143,7 @@
             // read the image file as a data URL.
             reader.readAsDataURL(this.files[0]);
           });
-    </script>
+    </script> --}}
 </body>
 
 </html>

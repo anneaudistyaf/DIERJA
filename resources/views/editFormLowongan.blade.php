@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-8">
-                <h1>Tambah</h1>
+                <h1>Edit</h1>
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -33,15 +33,15 @@
     <br>
     <div class="form-foto">
         <div class="row">
-            <div class="col-sm-1"></div>
+            {{-- <div class="col-sm-1"></div>
             <div class="col-sm-5">
                 <div class="foto-lowongan">
                     <div class="upload-foto text-center">
                         <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail">
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-4">
+            </div> --}}
+            {{-- <div class="col-sm-4">
                 <form>
                     <div class="form-group">
                         <br>
@@ -51,7 +51,7 @@
                             max size is 2mb and min size is 300kb</p>
                     </div>
                 </form>
-            </div>
+            </div> --}}
             <div class="col-sm-2"></div>
         </div>
     </div>
@@ -60,18 +60,20 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-8">
                 <br>
-                <form>
+                <form action="{{route('company.updatelowongan',$jobs->jobs_id)}}" method="POST">
+                    @csrf
                     <div class="form-group row">
                         <label for="inputPassword" class="col-sm-3 col-form-label">Posisi Pekerjaan</label>
                         <div class="col-sm-9">
-                            <input type="password" class="form-control" id="inputPassword" placeholder="Marketing">
+                            <input value="{{$jobs->posisi}}" name="posisi" type="text" class="form-control"
+                                id="inputPassword" placeholder="Marketing">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row">
                         <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Disabilities</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select name="disabilitas" class="form-control" id="exampleFormControlSelect1">
                                 <option>Tuna rungu</option>
                                 <option>Tuna wicara</option>
                                 <option>Lumpuh</option>
@@ -83,7 +85,7 @@
                     <div class="form-group row">
                         <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Location</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select name="lokasi" class="form-control" id="exampleFormControlSelect1">
                                 <option>Bogor</option>
                                 <option>Jakarta</option>
                                 <option>Bandung</option>
@@ -96,7 +98,7 @@
                     <div class="form-group row">
                         <label for="exampleFormControlSelect1" class="col-sm-3 col-form-label">Waktu</label>
                         <div class="col-sm-9">
-                            <select class="form-control" id="exampleFormControlSelect1">
+                            <select name="waktu" class="form-control" id="exampleFormControlSelect1">
                                 <option>Part-Time</option>
                                 <option>Full-Time</option>
                             </select>
@@ -107,16 +109,18 @@
                         <label for="exampleFormControlTextarea1" class="col-sm-3 col-form-label">Deskripsi dan
                             Syarat</label>
                         <div class="col-sm-9">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea name="jobs_description" class="form-control" id="exampleFormControlTextarea1"
+                                rows="3">{{$jobs->jobs_description}}</textarea>
                         </div>
                     </div>
+                    <br><br>
+                    <button class="btn btn-primary">SIMPAN</button>
                 </form>
-                <br><br>
-                <button class="btn btn-primary">SIMPAN</button>
             </div>
             <div class="col-sm-3"></div>
         </div>
     </div>
+
     <br>
     @include('footer')
 

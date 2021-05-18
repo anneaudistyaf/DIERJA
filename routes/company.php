@@ -24,6 +24,13 @@ Route::group([
     Route::get('/index', [App\Http\Controllers\company\CompanyController::class, 'index'])->name('index');
     Route::get('/profile-perusahaan/{id}', [App\Http\Controllers\company\CompanyProfileController::class, 'index'])->name('profile-perusahaan');
     Route::get('/edit-perusahaan/{id}', [App\Http\Controllers\company\CompanyProfileController::class, 'edit'])->name('edit-perusahaan');
+
     Route::post('/update-perusahaan/{id}', [App\Http\Controllers\company\CompanyProfileController::class, 'update'])->name('update-perusahaan');
-    Route::view('/lowongan-perusahaan', 'lowongan-perusahaan')->name('lowongan-perusahaan');
+    Route::get('/formlowongan', [App\Http\Controllers\company\LowonganController::class, 'show'])->name('formlowongan');
+    Route::post('/lowongan-perusahaan', [App\Http\Controllers\company\LowonganController::class, 'add'])->name('add.lowongan-perusahaan');
+    Route::get('/editlowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'edit'])->name('editlowongan');
+    Route::post('/updatelowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'update'])->name('updatelowongan');
+    Route::delete('/deleteLowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'delete'])->name('deletelowongan');
 });
+Route::get('/lowongan-perusahaan', [App\Http\Controllers\company\LowonganController::class, 'index'])->name('lowongan-perusahaan');
+Route::get('/detaillowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'detail'])->name('detaillowongan');

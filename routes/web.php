@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 // Route::view('/{path?}', 'test');
 Route::view('/test', 'test');
 Route::view('/', 'homepage')->name('homepage');
-// Route::view('/signup', 'signup')->name('signup');
-Route::view('/lowongan', 'lowongan')->name('lowongan');
-Route::view('/detaillowongan', 'detaillowongan')->name('detaillowongan');
+
+// Route::view('/lowongan', 'lowongan')->name('lowongan');
+
 Route::view('/pelatihan', 'pelatihan')->name('pelatihan');
 Route::view('/detailpelatihan', 'detailpelatihan')->name('detailpelatihan');
 Route::group(['middleware' => 'auth:web'], function () {
@@ -40,9 +40,8 @@ Route::group(['middleware' => 'auth:web'], function () {
 Route::get('/sharing', [\App\Http\Controllers\SharingController::class, 'index'])->name('sharing');
 
 
-Route::get('/abcd', [App\Http\Controllers\AuthController::class, 'index']);
 Route::view('/lamaran', 'lamaran')->name('lamaran');
-Route::view('/formlowongan', 'formlowongan')->name('formlowongan');
+
 // Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::view('/edit-perusahaan', 'edit-perusahaan')->name('edit-perusahaan');
 
@@ -55,3 +54,7 @@ Route::prefix('User')->group(function () {
     Route::get('/login', [App\Http\Controllers\AuthController::class, 'login']);
     Route::post('/login', [App\Http\Controllers\AuthController::class, 'loginAction'])->name('login');
 });
+
+Route::get('/lowongan', [App\Http\Controllers\User\LowonganUserController::class, 'index'])->name('lowongan');
+Route::get('/detaillowongan/{id}', [App\Http\Controllers\User\LowonganUserController::class, 'detail'])->name('detail.lowongan');
+Route::post('/detailLowongan/{id}', [App\Http\Controllers\User\LowonganUserController::class, 'registerJobs'])->name('regis.lowongan');

@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class jobs extends Model
 {
     use HasFactory;
+    protected $table = 'jobs';
+    protected $primaryKey = 'jobs_id';
     public function company()
     {
-        return $this->belongsTo(company::class);
+        return $this->belongsTo(company::class, 'company_id');
     }
 }

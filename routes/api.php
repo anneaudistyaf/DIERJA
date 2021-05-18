@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\FormController;
+use App\Http\Controllers\API\JobsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,5 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::get('/form', [FormController::class, 'index']);
     Route::get('/logout', [AuthController::class, 'logout']);
 });
+Route::get('/jobs', [JobsController::class, 'jobs']);
 Route::post('/login', [AuthController::class, 'login']);

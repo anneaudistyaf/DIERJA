@@ -41,7 +41,7 @@ class CompanyProfileController extends Controller
                     'deskripsi' => ['required'],
                 ]);
                 if ($validator->fails()) {
-                    dd($request->all());
+
                     return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
                 }
                 $file = $request->file('file');
@@ -74,7 +74,7 @@ class CompanyProfileController extends Controller
             }
         } catch (Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('failed', 'Failed Update!');
+            return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
         }
         return redirect()->route('company.profile-perusahaan', $id)->with('succes', 'Edit Success');
     }
