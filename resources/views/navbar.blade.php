@@ -73,7 +73,7 @@
 						</a>
 						<ul class="dropdown-menu dropdown-start" aria-labelledby="navbarDropdownMenuLink">
 						  <li><a class="dropdown-item" href="{{ url('User/register')}}">User</a></li>
-						  <li><a class="dropdown-item" href="#">Admin</a></li>
+						  <li><a class="dropdown-item" href="{{route('loginadmin')}}">Admin</a></li>
 						</ul>
 					</li>
 					@endif
