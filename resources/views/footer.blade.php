@@ -17,7 +17,7 @@
       <!--Grid column-->
       <div class="col-lg-4 col-md-4 mb-4 mb-md-0">
         <h5 class="footer-logo">
-          <img src="{{url('../images/Logo2.png')}}">
+          <img class="img-fluid" src="{{url('../images/Logo2.png')}}">
         </h5>
 
         <ul class="list-unstyled mb-0">

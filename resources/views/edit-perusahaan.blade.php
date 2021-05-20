@@ -24,7 +24,7 @@
       <div class="col-sm-3"></div>
       <div class="col-sm-6">
         <div class="upload-foto text-center">
-          <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail">
+          <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail img-fluid">
           <input type="file" name="file" class="file" accept="image/*">
           <div class="input-group my-3">
             <input type="text" class="form-control" disabled placeholder="No file choosen" id="file">

@@ -39,10 +39,10 @@
                 Data Analyst
               </div>
               <div class="card-body">
-                <p class="card-title"> <img src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
-                <p class="card-title"> <img src="{{url('../images/clock.png')}}" alt=""> Full Time</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/clock.png')}}" alt=""> Full Time</p>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-title"> <img src="{{url('../images/disabled.png')}}" alt=""> Tuna Rungu, Lumpuh</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt=""> Tuna Rungu, Lumpuh</p>
               </div>
               <div class="card-footer text-center">
                 <a href="">Detail</a>
@@ -55,10 +55,10 @@
                 Data Analyst
               </div>
               <div class="card-body">
-                <p class="card-title"> <img src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
-                <p class="card-title"> <img src="{{url('../images/clock.png')}}" alt=""> Part Time</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/clock.png')}}" alt=""> Part Time</p>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-title"> <img src="{{url('../images/disabled.png')}}" alt=""> Tuna Wicara</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt=""> Tuna Wicara</p>
               </div>
               <div class="card-footer text-center">
                 <a href="">Detail</a>
@@ -71,10 +71,10 @@
                 Data Analyst
               </div>
               <div class="card-body">
-                <p class="card-title"> <img src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
-                <p class="card-title"> <img src="{{url('../images/clock.png')}}" alt=""> Internship </p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/clock.png')}}" alt=""> Internship </p>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-title"> <img src="{{url('../images/disabled.png')}}" alt=""> Disleksia </p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt=""> Disleksia </p>
               </div>
               <div class="card-footer text-center">
                 <a href="">Detail</a>
@@ -173,7 +173,7 @@
           <div class="card border-secondary">
             <div class="row">
               <div class="col-sm-2 text-center">
-                <img src="{{url('../images/profpic.png')}}" alt="">
+                <img class="img-fluid" src="{{url('../images/profpic.png')}}" alt="">
               </div>
               <div class="col-sm-10">
                 <div class="card-body">

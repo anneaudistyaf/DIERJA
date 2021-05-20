@@ -25,6 +25,10 @@
     font-family: 'Cormorant SC';
 }
 
+h3 {
+    font-family: 'Cormorant SC';
+}
+
 .card-body-cv h3{
     text-decoration: underline;
     font-family: 'Cormorant SC';
@@ -32,3 +36,17 @@
 .card-text-cv {
     font-family: 'Cormorant SC';
 }
+
+.status .thead-light {
+    background-color: #0D335D !important;
+}
+
+.card {
+    border-color: black !important;
+    border-radius: 10px !important;
+}
+
+.table {
+    border-color: black !important;
+}
+

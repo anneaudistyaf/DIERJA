@@ -64,7 +64,7 @@
                             <div class="col-sm-5">
                                 <div class="foto-teaser">
                                     <div class="upload-foto text-center">
-                                        <img src="https://placehold.it/80x80" id="preview" class="text-center">
+                                        <img src="https://placehold.it/80x80" id="preview" class="text-center img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                             <div class="col-sm-5">
                                 <div class="foto-pelatihan">
                                     <div class="upload-foto text-center">
-                                        <img src="https://placehold.it/80x80" id="preview" class="text-center">
+                                        <img src="https://placehold.it/80x80" id="preview" class="text-center img-fluid">
                                     </div>
                                 </div>
                             </div>

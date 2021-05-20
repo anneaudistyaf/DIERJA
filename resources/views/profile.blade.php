@@ -42,7 +42,7 @@
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="{{url('../profileImage/',$usr->user_profile)}}" alt="..." style="max-width: 90%;">
+                            <img class="img-fluid" src="{{url('../profileImage/',$usr->user_profile)}}" alt="..." style="max-width: 90%;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body-profile">
@@ -56,7 +56,7 @@
                                     @endforeach
                                     @foreach ($lokasi as $key => $value)
                                     @if($usr->location == $key)
-                                    <p class="card-text"><img src="{{url('../images/place.png')}}" alt="">{{$value}}</p>
+                                    <p class="card-text"><img class="img-fluid" src="{{url('../images/place.png')}}" alt="">{{$value}}</p>
                                     @endif
                                     @endforeach
                             </div>
@@ -67,6 +67,33 @@
             <div class="col-sm-2"></div>
         </div>
     </div>
+    <br>
+        <div class="row status">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-7">
+                <div id="tabel-user" class="table-responsive">
+                    <h3 class="text-center">STATUS LAMARAN</h3>
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                          <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Perusahaan</th>
+                            <th scope="col">Posisi</th>
+                            <th scope="col">Status Lebaran</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Indofood</td>
+                            <td>Marketing</td>
+                            <td>Menunggu Konfirmasi</td>
+                        </tbody>
+                    </table>
+                  </div>
+            </div>
+        </div>
+        <br>
     <div class="cv">
         <div class="row judul-cv">
             <div class="col-sm-2"></div>
@@ -127,9 +154,9 @@
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="card-body-cv">
                         <h3 class="card-title">SOSIAL MEDIA</h3>
-                        <p class="card-text"><img src="{{url('../images/facebook 1.png')}}" alt="">Dian Rahmawati</p>
-                        <p class="card-text"><img src="{{url('../images/twitter 1.png')}}" alt="">@dianrahmawati1995</p>
-                        <p class="card-text"><img src="{{url('../images/instagram 1.png')}}" alt="">@dianrahmawati</p>
+                        <p class="card-text"><img class="img-fluid" src="{{url('../images/facebook 1.png')}}" alt="">Dian Rahmawati</p>
+                        <p class="card-text"><img class="img-fluid" src="{{url('../images/twitter 1.png')}}" alt="">@dianrahmawati1995</p>
+                        <p class="card-text"><img class="img-fluid" src="{{url('../images/instagram 1.png')}}" alt="">@dianrahmawati</p>
                     </div>
                 </div>
             </div>
