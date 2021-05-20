@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class CommentSeeder extends Seeder
 {
@@ -13,6 +15,22 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('kategoris')->insert([
+            [
+
+                'name' => 'Cooking',
+
+            ],
+            [
+
+                'name' => 'Programming',
+
+            ],
+            [
+
+                'name' => 'Musik',
+
+            ],
+        ]);
     }
 }

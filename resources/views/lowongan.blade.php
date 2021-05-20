@@ -43,13 +43,13 @@
                             </p>
                             <p class="card-title"> <img src="{{url('../images/clock.png')}}" alt=""> {{$item->waktu}}
                             </p>
-                            <p class="card-text"> {{$item->jobs_description}}
+                            <p class="card-text"> {{$item->Deskripsi}}
                             </p>
                             <p class="card-title"> <img src="{{url('../images/disabled.png')}}" alt="">
                                 {{$item->disabilitas}}</p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="{{route('detail.lowongan',$item->jobs_id)}}">Detail</a>
+                            <a href="{{route('detail.lowongan',$item->id)}}">Detail</a>
                         </div>
                     </div>
                 </div>

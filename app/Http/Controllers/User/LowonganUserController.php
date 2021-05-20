@@ -10,14 +10,20 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use GuzzleHttp\Client;
 
 class LowonganUserController extends Controller
 {
     public function index()
     {
-        $jobs = jobs::all();
-
+        // $jobs = jobs::all();
+        $client = new Client();
+        $url = "http://127.0.0.1:8080/api/jobs";
+        $response = $client->request('GET', $url, [
+            'verify'  => false,
+        ]);
+        $jobs = json_decode($response->getBody());
+        // dd($jobs);
         return view('lowongan', compact('jobs'));
     }
     public function detail($id)

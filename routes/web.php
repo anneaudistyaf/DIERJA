@@ -24,7 +24,7 @@ Route::view('/', 'homepage')->name('homepage');
 
 // Route::view('/lowongan', 'lowongan')->name('lowongan');
 
-Route::view('/pelatihan', 'pelatihan')->name('pelatihan');
+Route::view('/pelatihan', 'pelatihan');
 Route::view('/detailpelatihan', 'detailpelatihan')->name('detailpelatihan');
 Route::group(['middleware' => 'auth:web'], function () {
     Route::post('/post.user', [App\Http\Controllers\User\UserPost::class, 'post'])->name('user.post');
@@ -45,8 +45,8 @@ Route::view('/lamaran', 'lamaran')->name('lamaran');
 // Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::view('/edit-perusahaan', 'edit-perusahaan')->name('edit-perusahaan');
 
-Route::view('/admin', 'admin')->name('admin');
-Route::view('/tambah-pelatihan', 'tambah-pelatihan')->name('tambah-pelatihan');
+// Route::view('/admin', 'admin')->name('admin');
+// Route::view('/tambah-pelatihan', 'tambah-pelatihan')->name('tambah-pelatihan');
 
 Route::prefix('User')->group(function () {
     Route::get('/register', [App\Http\Controllers\AuthController::class, 'register']);

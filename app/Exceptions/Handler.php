@@ -62,6 +62,8 @@ class Handler extends ExceptionHandler
 
         if ($guard == 'company') {
             return redirect()->guest(route('company.login'));
+        } elseif ($guard == 'admin') {
+            return redirect()->guest(route('admin.login'));
         }
 
         return redirect()->guest(route('homepage'));

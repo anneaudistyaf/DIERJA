@@ -8,8 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class pelatihan extends Model
 {
     use HasFactory;
-    public function kategori()
-    {
-        return $this->hasOne(kategori::class);
-    }
+    protected $table = 'pelatihans';
+    protected $primaryKey = 'pelatihan_id';
+    protected $fillable = [
+        'judul',
+        'author',
+        'kategori',
+        'thumbnail',
+        'video',
+        'deskripsi',
+
+
+    ];
+    // public function kategori()
+    // {
+    //     return $this->hasOne(kategori::class);
+    // }
 }

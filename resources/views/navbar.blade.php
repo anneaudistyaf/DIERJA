@@ -54,7 +54,7 @@
 						<a class="nav-link" href="{{route('sharing')}}">Sharing</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{{route('pelatihan')}}">Pelatihan</a>
+						<a class="nav-link" href="{{url('/pelatihan')}}">Pelatihan</a>
 					</li>
 					@endif
 					@if(Auth::guard('web')->check())

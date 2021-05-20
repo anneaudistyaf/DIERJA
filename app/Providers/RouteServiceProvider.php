@@ -20,6 +20,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
         $this->mapWebRoutes();
+        $this->mapCompanyRoutes();
         $this->mapAdminRoutes();
     }
 
@@ -30,13 +31,21 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/web.php'));
     }
 
-    protected function mapAdminRoutes()
+    protected function mapCompanyRoutes()
     {
         Route::middleware('web')
             ->as('company.')
             ->prefix('company')
             ->namespace($this->namespace . '\company')
             ->group(base_path('routes/company.php'));
+    }
+    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->as('admin.')
+            ->prefix('admin')
+            ->namespace($this->namespace . '\Admin')
+            ->group(base_path('routes/admin.php'));
     }
 
     protected function mapApiRoutes()

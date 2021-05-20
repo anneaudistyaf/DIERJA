@@ -20,161 +20,241 @@
   <div class="row admin">
     <div class="col-md-1"></div>
     <div class="col-md-3">
-          <br>
-          <h1>ADMIN</h1>
-          <br>
-          <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Maintenance
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#tabel-user">USER</a>
-              <a class="dropdown-item" href="#tabel-company">PERUSAHAAN</a>
-              <a class="dropdown-item" href="#tabel-lowongan">LOWONGAN</a>
-              <a class="dropdown-item" href="#tabel-sharing">SHARING</a>
-              <a class="dropdown-item" href="#tabel-pelatihan">PELATIHAN</a>
-            </div>
-          </div>
+      <br>
+      <h1>ADMIN</h1>
+      <br>
+      <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Maintenance
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#tabel-user">USER</a>
+          <a class="dropdown-item" href="#tabel-company">PERUSAHAAN</a>
+          <a class="dropdown-item" href="#tabel-lowongan">LOWONGAN</a>
+          <a class="dropdown-item" href="#tabel-sharing">SHARING</a>
+          <a class="dropdown-item" href="#tabel-pelatihan">PELATIHAN</a>
+        </div>
+      </div>
     </div>
     <div class="col-md-7">
-          <br>
-          <div id="tabel-user" class="table-responsive">
-            <h3 class="text-center">USER</h3>
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Nama</th>
-                    <th scope="col">DateOfBirth</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Disabilities</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Password</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Dian</td>
-                    <td>xx-xx-xxxx</td>
-                    <td>Perempuan</td>
-                    <td>Tuna Netra</td>
-                    <td>Bogor</td>
-                    <td>dian@gmail.com</td>
-                    <td>9ajskECmvba@JDm</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tbody>
-              </table>
-          </div>
-          <br>
-          <div id="tabel-company"  class="table-responsive">
-            <h3 class="text-center">PERUSAHAAN</h3>
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Sektor</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">No. Telp</th>
-                    <th scope="col">Deskripsi</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>PT. Indofood</td>
-                    <td>food industry</td>
-                    <td>Sudirman Plaza Indofood Tower Lantai 23. Jl. Jend. Sudirman Kav. 76-78. Jakarta DKI Jakarta, 12910.</td>
-                    <td>recruit.hr@indofood.com</td>
-                    <td>(021)-57958822</td>
-                    <td>PT Indofood Sukses Makmur Tbk atau lebih dikenal dengan nama Indofood merupakan produsen berbagai jenis makanan dan minuman yang bermarkas di Jakarta, Indonesia</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tbody>
-              </table>
-          </div>
-          <br>
-          <div id="tabel-lowongan" class="table-responsive">
-            <h3 class="text-center">LOWONGAN</h3>
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Posisi</th>
-                    <th scope="col">Disabilities</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Waktu</th>
-                    <th scope="col">Deskripsi</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Marketing</td>
-                    <td>Tuna Netra</td>
-                    <td>Sudirman Plaza Indofood Tower Lantai 23. Jl. Jend. Sudirman Kav. 76-78. Jakarta DKI Jakarta, 12910.</td>
-                    <td>Part-Time</td>
-                    <td>PT Indofood Sukses Makmur Tbk atau lebih dikenal dengan nama Indofood merupakan produsen berbagai jenis makanan dan minuman yang bermarkas di Jakarta, Indonesia</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tbody>
-              </table>
-          </div>
-          <br>
-          <div id="tabel-sharing" class="table-responsive">
-            <h3 class="text-center">SHARING</h3>
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Disabilities</th>
-                    <th scope="col">Job</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>David Sukonto</td>
-                    <td>Tuna Wicara</td>
-                    <td>Data Analyst</td>
-                    <td>PT Indofood Sukses Makmur Tbk atau lebih dikenal dengan nama Indofood merupakan produsen berbagai jenis makanan dan minuman yang bermarkas di Jakarta, Indonesia</td>
-                    <td><button class="btn btn-danger">Delete</button></td>
-                </tbody>
-              </table>
-          </div>
-          <br>
-          <div id="tabel-pelatihan" class="table-responsive">
-            <h3 class="text-center">PELATIHAN</h3>
-            <a href="{{route('tambah-pelatihan')}}" class="btn btn-secondary">Tambah Pelatihan</a>
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">Nama Pelatihan</th>
-                    <th scope="col">Pembuat</th>
-                    <th scope="col">Kategori</th>
-                    <th scope="col">Deskripsi</th>
-                    <th scope="col">File</th>
-                    <th scope="col">Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Memasak Daging Agar Empuk</td>
-                    <td>Chef Renata</td>
-                    <td>Cooking</td>
-                    <td>PT Indofood Sukses Makmur Tbk atau lebih dikenal dengan nama Indofood merupakan produsen berbagai jenis makanan dan minuman yang bermarkas di Jakarta, Indonesia</td>
-                    <td>image.png</td>
-                    <td><div class="d-grid gap-2 d-md-block">
-                      <a href="{{route('tambah-pelatihan')}}"  class="btn btn-success" type="button">Update</a>
-                      <button class="btn btn-danger" type="button">Delete</button>
-                        </div>
-                    </td>
-                </tbody>
-              </table>
-          </div>
+      <br>
+      <div id="tabel-user" class="table-responsive">
+        <h3 class="text-center">USER</h3>
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Nama</th>
+              <th scope="col">DateOfBirth</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Disabilities</th>
+              <th scope="col">Location</th>
+              <th scope="col">Email</th>
+              <th scope="col">Password</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($user as $item)
+
+            <tr>
+              <td>{{$item->name}}</td>
+              <td>{{$item->date_of_birth}}</td>
+              <td>{{$item->gender}}</td>
+              @foreach ($disabilitas as $key =>$value)
+              @if($item->disabilitas == $key)
+              <td>{{$value}}</td>
+              @endif
+              @endforeach
+              @foreach ($lokasi as $key =>$value)
+              @if($item->location == $key)
+              <td>{{$value}}</td>
+              @endif
+              @endforeach
+              <td>{{$item->email}}</td>
+              <td>{{$item->password}}</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+              @endforeach
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div id="tabel-company" class="table-responsive">
+        <h3 class="text-center">PERUSAHAAN</h3>
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Nama</th>
+              <th scope="col">Sektor</th>
+              <th scope="col">Alamat</th>
+              <th scope="col">Email</th>
+              <th scope="col">No. Telp</th>
+              <th scope="col">Deskripsi</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              @foreach ($company as $item)
+
+              <td>{{$item->company_name}}</td>
+              <td>{{$item->sektor}}</td>
+              <td>{{$item->alamat}}
+              </td>
+              <td>{{$item->email}}</td>
+              <td>{{$item->phone}}</td>
+              <td>{{$item->deskripsi}}</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+              @endforeach
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div id="tabel-lowongan" class="table-responsive">
+        <h3 class="text-center">LOWONGAN</h3>
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Posisi</th>
+              <th scope="col">Disabilities</th>
+              <th scope="col">Location</th>
+              <th scope="col">Waktu</th>
+              <th scope="col">Deskripsi</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($jobs as $item)
+
+            <tr>
+              <td>{{$item->posisi}}</td>
+              <td>{{$item->disabilitas}}</td>
+              <td>{{$item->lokasi}}
+              </td>
+              <td>{{$item->lokasi}}</td>
+              <td>{{$item->jobs_description}}</td>
+              <td><button class="btn btn-danger">Delete</button></td>
+              @endforeach
+          </tbody>
+        </table>
+      </div>
+      <br>
+      <div id="tabel-sharing" class="table-responsive">
+        <h3 class="text-center">SHARING</h3>
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Nama</th>
+              <th scope="col">Disabilities</th>
+              <th scope="col">Job</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($sharing as $item)
+
+            <tr>
+              <td>{{$item->user->name}}</td>
+              <td>{{$item->user->disabilitas}}</td>
+              <td>Data Analyst</td>
+              <td>{{$item->deskripsi}}</td>
+              <td><button class="btn btn-danger delete-sharing">Delete</button></td>
+          </tbody>
+          @endforeach
+        </table>
+      </div>
+      <br>
+      <div id="tabel-pelatihan" class="table-responsive">
+        <h3 class="text-center">PELATIHAN</h3>
+        <a href="{{route('admin.show.add.pelatihan')}}" class="btn btn-secondary">Tambah Pelatihan</a>
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">Nama Pelatihan</th>
+              <th scope="col">Pembuat</th>
+              <th scope="col">Kategori</th>
+              <th scope="col">Deskripsi</th>
+              <th scope="col">File</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach ($pelatihan as $item)
+
+            <tr>
+              <td>{{$item->judul}}</td>
+              <td>{{$item->author}}</td>
+              <td>{{$item->kategori}}</td>
+              <td>{{$item->deskripsi}}</td>
+              <td>{{$item->video}}</td>
+              <td>
+                <div class="d-grid gap-2 d-md-block">
+                  <a href="{{route('admin.edit.pelatihan',$item->pelatihan_id)}}" class="btn btn-success"
+                    type="button">Update</a>
+                  <button data-id="{{$item->pelatihan_id}}" class="btn btn-danger delete-pelatihan"
+                    type="button">Delete</button>
+                </div>
+              </td>
+              @endforeach
+          </tbody>
+        </table>
+      </div>
     </div>
     <div class="col-md-1"></div>
   </div>
+  {{-- MODAL DELETE --}}
+  <div class="modal fade bd-delete-modal-lowongan" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    id="modal-delete-admin" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content px-3 pt-2 pb-4 ">
+        <div class="modal-title">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <h1 class="text-center text-delete" style="font-size:20px">
+          Delete
+        </h1>
+        <h1 class="text-center mt-3 font-weight-normal" style="font-size:15px">
+          Are you sure you want to delete?
+        </h1>
+        <div class="mt-3">
+          <div class="d-flex justify-content-around">
+            <div class="button w-50 mx-3">
+              <button data-dismiss="modal" type="button" class="btn btn-delete btn-secondary w-100">Keep</button>
+            </div>
+            <div class="button w-50 mx-3">
+              <form action="" id="deletePelatihan" method="POST">
+                @csrf
+                {{method_field('delete')}}
+                <a href="">
+                  <button class="btn btn-delete btn-danger w-100">Delete</button>
+                </a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
   @include('footer')
+  <script>
+    $('.delete-pelatihan').on('click',function(){
+                console.log($(this).data('id'))
+                let id = $(this).data('id')
+                $('#modal-delete-admin').modal('show')
+                $('#modal-delete-admin').find('#deletePelatihan').attr('action',`/admin/deletePelatihan/${id}`)
+  });
+    $('.delete-sharing').on('click',function(){
+                console.log($(this).data('id'))
+                let id = $(this).data('id')
+                $('#modal-delete-admin').modal('show')
+                $('#modal-delete-admin').find('#deletePelatihan').attr('action',`/admin/deletePelatihan/${id}`)
+  });
+
+  </script>
 </body>
+
 </html>
