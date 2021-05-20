@@ -46,7 +46,7 @@
                     <div class="row">
 
                         <div class="col-sm-2 text-center">
-                            <img src="{{url('../profileImage/',)}}" alt="">
+                            <img class="img-fluid" src="{{url('../profileImage/',)}}" alt="">
                         </div>
                         <div class="col-sm-10">
                             <div class="card-body">

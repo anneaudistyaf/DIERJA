@@ -37,7 +37,7 @@
             <div class="col-sm-5">
                 <div class="foto-lowongan">
                     <div class="upload-foto text-center">
-                        <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail">
+                        <img src="https://placehold.it/80x80" id="preview" class="text-center img-thumbnail img-fluid">
                     </div>
                 </div>
             </div> --}}

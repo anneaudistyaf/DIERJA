@@ -39,12 +39,12 @@ Route::group(['middleware' => 'auth:web'], function () {
 });
 Route::get('/sharing', [\App\Http\Controllers\SharingController::class, 'index'])->name('sharing');
 
-
 Route::view('/lamaran', 'lamaran')->name('lamaran');
 
 // Route::post('/register', [App\Http\Controllers\AuthController::class, 'register']);
 Route::view('/edit-perusahaan', 'edit-perusahaan')->name('edit-perusahaan');
 
+Route::view('/loginadmin', 'loginadmin')->name('loginadmin');
 Route::view('/admin', 'admin')->name('admin');
 Route::view('/tambah-pelatihan', 'tambah-pelatihan')->name('tambah-pelatihan');
 

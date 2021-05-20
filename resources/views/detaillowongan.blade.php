@@ -25,14 +25,14 @@
                 <p>PT.{{$jobs->company->company_name}}</p>
                 <div class="row">
                     <div class="col-md-6">
-                        <p><img src="{{url('../images/place.png')}}" alt="">{{$jobs->lokasi}}</p>
+                        <p><img class="img-fluid" src="{{url('../images/place.png')}}" alt="">{{$jobs->lokasi}}</p>
                     </div>
                     <div class="col-md-6">
-                        <p><img src="{{url('../images/clock.png')}}" alt="">{{$jobs->waktu}}</p>
+                        <p><img class="img-fluid" src="{{url('../images/clock.png')}}" alt="">{{$jobs->waktu}}</p>
                     </div>
                 </div>
-                <img src="{{url('../images/disabled.png')}}" alt="">{{$jobs->disabilitas}}</p>
-                <img src="{{url('../images/marketing.png')}}">
+                <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt="">{{$jobs->disabilitas}}</p>
+                <img class="img-fluid" src="{{url('../images/marketing.png')}}">
                 <br><br>
                 <h5>Deskripsi dan Syarat</h5>
                 <p>{{$jobs->jobs_description}}</p>
@@ -61,7 +61,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body text-center">
-                        <img src="{{url('../images/berhasilcv.png')}}">
+                        <img class="img-fluid" src="{{url('../images/berhasilcv.png')}}">
                         <br><br>
                         <h3>CV Berhasil Terkirim</h3>
                     </div>

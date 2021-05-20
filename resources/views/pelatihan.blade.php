@@ -24,19 +24,19 @@
                     <div class="row">
                         <div class="col-md-4 card btn card-button ">
                             <div class="card-body text-center align-middle">
-                                <img src="{{url('../images/programming.png')}}" alt=""><br>
+                                <img class="img-fluid" src="{{url('../images/programming.png')}}" alt=""><br>
                                 <a href="#programming">Programming</a>
                             </div>
                         </div>
                         <div class=" col-md-4 card btn card-button">
                             <div class="card-body text-center align-middle">
-                                <img src="{{url('../images/music.png')}}" alt=""><br>
+                                <img class="img-fluid" src="{{url('../images/music.png')}}" alt=""><br>
                                 <a href="#musik">Musik</a>
                             </div>
                         </div>
                         <div class="col-md-4 card btn card-button">
                             <div class="card-body text-center align-middle">
-                                <img src="{{url('../images/cooking.png')}}" alt=""><br>
+                                <img class="img-fluid" src="{{url('../images/cooking.png')}}" alt=""><br>
                                 <a href="#cooking">Cooking</a>
                             </div>
                         </div>
