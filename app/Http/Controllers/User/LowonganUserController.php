@@ -16,13 +16,13 @@ class LowonganUserController extends Controller
 {
     public function index()
     {
-        // $jobs = jobs::all();
-        $client = new Client();
-        $url = "http://127.0.0.1:8080/api/jobs";
-        $response = $client->request('GET', $url, [
-            'verify'  => false,
-        ]);
-        $jobs = json_decode($response->getBody());
+        $jobs = jobs::all();
+        // $client = new Client();
+        // $url = "http://127.0.0.1:8080/api/jobs";
+        // $response = $client->request('GET', $url, [
+        //     'verify'  => false,
+        // ]);
+        // $jobs = json_decode($response->getBody());
         // dd($jobs);
         return view('lowongan', compact('jobs'));
     }
@@ -37,7 +37,9 @@ class LowonganUserController extends Controller
     }
     public function registerJobs($id)
     {
+        // dd($id);
         $jobs = jobs::find($id);
+
         $user = User::where('id', Auth::id())->first();
 
         try {
@@ -48,10 +50,12 @@ class LowonganUserController extends Controller
             $apply->status = 0;
             $apply->id = $user->id;
             $apply->jobs_id = $jobs->jobs_id;
+            $apply->company_id = $jobs->company->company_id;
             $apply->save();
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
+
             return redirect()->back()->with('failed', 'CV tidak terkirim');
         }
         return redirect()->back()->with('success', 'CV terkirim');

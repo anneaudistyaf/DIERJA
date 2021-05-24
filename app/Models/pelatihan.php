@@ -13,10 +13,11 @@ class pelatihan extends Model
     protected $fillable = [
         'judul',
         'author',
-        'kategori',
+        'kategori_id',
         'thumbnail',
         'video',
         'deskripsi',
+
 
 
     ];

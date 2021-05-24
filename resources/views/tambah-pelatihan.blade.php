@@ -20,6 +20,11 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
+            @if(session('failed'))
+            <div class="alert alert-danger text-center" role="alert">
+                {{ session('failed')}}
+            </div>
+            @endif
             <h1>Tambah Pelatihan</h1>
             <br>
             <div class="card">
@@ -50,9 +55,9 @@
                         <div class="col-sm-8">
                             <select name="kategori" class="form-control select" id="inputGroupSelect01">
                                 <option selected>Choose...</option>
-                                <option value="0">Cooking</option>
-                                <option value="1">Programming</option>
-                                <option value="2">Musik</option>
+                                <option value="1">Cooking</option>
+                                <option value="2">Programming</option>
+                                <option value="3">Musik</option>
                             </select>
                         </div>
                         <div class="col-sm-1"></div>
@@ -64,7 +69,8 @@
                             <div class="col-sm-5">
                                 <div class="foto-teaser">
                                     <div class="upload-foto text-center">
-                                        <img src="https://placehold.it/80x80" id="preview" class="text-center img-fluid">
+                                        <img src="https://placehold.it/80x80" id="preview"
+                                            class="text-center img-fluid">
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +107,8 @@
                             <div class="col-sm-5">
                                 <div class="foto-pelatihan">
                                     <div class="upload-foto text-center">
-                                        <img src="https://placehold.it/80x80" id="preview" class="text-center img-fluid">
+                                        <img src="https://placehold.it/80x80" id="preview"
+                                            class="text-center img-fluid">
                                     </div>
                                 </div>
                             </div>

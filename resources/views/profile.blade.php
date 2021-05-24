@@ -42,7 +42,8 @@
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img class="img-fluid" src="{{url('../profileImage/',$usr->user_profile)}}" alt="..." style="max-width: 90%;">
+                            <img class="img-fluid" src="{{url('../profileImage/',$usr->user_profile)}}" alt="..."
+                                style="max-width: 90%;">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body-profile">
@@ -56,7 +57,8 @@
                                     @endforeach
                                     @foreach ($lokasi as $key => $value)
                                     @if($usr->location == $key)
-                                    <p class="card-text"><img class="img-fluid" src="{{url('../images/place.png')}}" alt="">{{$value}}</p>
+                                    <p class="card-text"><img class="img-fluid" src="{{url('../images/place.png')}}"
+                                            alt="">{{$value}}</p>
                                     @endif
                                     @endforeach
                             </div>
@@ -68,32 +70,41 @@
         </div>
     </div>
     <br>
-        <div class="row status">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-7">
-                <div id="tabel-user" class="table-responsive">
-                    <h3 class="text-center">STATUS LAMARAN</h3>
-                    <table class="table table-bordered">
-                        <thead class="thead-light">
-                          <tr>
+
+    <div class="row status">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-7">
+            <div id="tabel-user" class="table-responsive">
+                <h3 class="text-center">STATUS LAMARAN</h3>
+                <table class="table table-bordered">
+                    <thead class="thead-light">
+                        <tr>
                             <th scope="col">No</th>
                             <th scope="col">Nama Perusahaan</th>
                             <th scope="col">Posisi</th>
                             <th scope="col">Status Lebaran</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>Indofood</td>
-                            <td>Marketing</td>
-                            <td>Menunggu Konfirmasi</td>
-                        </tbody>
-                    </table>
-                  </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($apply as $item)
+                        <tr>
+                            <td>{{$loop->iteration}}</td>
+                            <td>{{$item->company->company_name}}</td>
+                            <td>{{$item->posisi}}</td>
+                            @foreach ($status as $key => $value)
+                            @if($item->status == $key)
+                            <td>{{$value}}</td>
+                            @endif
+                            @endforeach
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-        <br>
+    </div>
+
+    <br>
     <div class="cv">
         <div class="row judul-cv">
             <div class="col-sm-2"></div>
@@ -114,49 +125,54 @@
             <div class="col-sm-8">
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="pekerjaan">
-                        <h4>WEB DEVELOPER</h4>
+                        <h4>{{$cv->keahlian}}</h4>
                     </div>
                 </div>
                 <br>
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="card-body-cv">
                         <h3 class="card-title">PENGALAMAN KERJA</h3>
-                        <p class="card-text-cv">Software Engineer Intern</p>
-                        <p class="card-text-cv">Tokopedia</p>
-                        <p class="card-text-cv"><small class="text-muted">2018-2019</small></p>
+                        <p class="card-text-cv">{{$cv->pengalamanKerja}}</p>
+                        {{-- <p class="card-text-cv">Tokopedia</p> --}}
+                        <p class="card-text-cv"><small
+                                class="text-muted">{{$cv->tahunAwalKerja}}-{{$cv->tahunAkhirKerja}}</small></p>
                         <p class="card-text-cv">Responsibilities</p>
-                        <p class="card-text-cv">- Develop quality software and web applications</p>
-                        <p class="card-text-cv">- Analyze and maintain existing software applications</p>
-                        <p class="card-text-cv">- Discover and fix programming bugs</p>
+                        <p class="card-text-cv">{{$cv->deskripsiKerja}}</p>
+                        {{-- <p class="card-text-cv">- Analyze and maintain existing software applications</p>
+                        <p class="card-text-cv">- Discover and fix programming bugs</p> --}}
                     </div>
                 </div>
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="card-body-cv">
                         <h3 class="card-title">SKILL</h3>
-                        <p class="card-text-cv">FIGMA</p>
-                        <p class="card-text-cv">Javascript</p>
+                        <p class="card-text-cv">{{$cv->skill}}</p>
+                        {{-- <p class="card-text-cv">Javascript</p>
                         <p class="card-text-cv">Laravel</p>
                         <p class="card-text-cv">PHP</p>
-                        <p class="card-text-cv">HTML</p>
+                        <p class="card-text-cv">HTML</p> --}}
                     </div>
                 </div>
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="card-body-cv">
                         <h3 class="card-title">EDUKASI</h3>
-                        <p class="card-text-cv">Universitas Padjadjaran</p>
-                        <p class="card-text-cv">S1 Teknik Informatika</p>
-                        <p class="card-text-cv"><small class="text-muted">2018-Present</small></p>
-                        <p class="card-text-cv">SMAN 90 Bandung</p>
+                        <p class="card-text-cv">{{$cv->edukasi}}</p>
+                        {{-- <p class="card-text-cv">S1 Teknik Informatika</p> --}}
+                        <p class="card-text-cv"><small
+                                class="text-muted">{{$cv->edukasiTahunAwal}}-{{$cv->edukasiTahunAkhir}}</small></p>
+                        {{-- <p class="card-text-cv">SMAN 90 Bandung</p>
                         <p class="card-text-cv">Sekolah Menengah Atas, IPA</p>
-                        <p class="card-text-cv"><small class="text-muted">2015-2018</small></p>
+                        <p class="card-text-cv"><small class="text-muted">2015-2018</small></p> --}}
                     </div>
                 </div>
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="card-body-cv">
                         <h3 class="card-title">SOSIAL MEDIA</h3>
-                        <p class="card-text"><img class="img-fluid" src="{{url('../images/facebook 1.png')}}" alt="">Dian Rahmawati</p>
-                        <p class="card-text"><img class="img-fluid" src="{{url('../images/twitter 1.png')}}" alt="">@dianrahmawati1995</p>
-                        <p class="card-text"><img class="img-fluid" src="{{url('../images/instagram 1.png')}}" alt="">@dianrahmawati</p>
+                        <p class="card-text"><img class="img-fluid" src="{{url('../images/facebook 1.png')}}"
+                                alt="">{{$cv->sosialMedia}}</p>
+                        <p class="card-text"><img class="img-fluid" src="{{url('../images/twitter 1.png')}}"
+                                alt="">{{$cv->sosialMedia}}</p>
+                        <p class="card-text"><img class="img-fluid" src="{{url('../images/instagram 1.png')}}"
+                                alt="">{{$cv->sosialMedia}}</p>
                     </div>
                 </div>
             </div>

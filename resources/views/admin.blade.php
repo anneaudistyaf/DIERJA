@@ -40,6 +40,11 @@
     <div class="col-md-7">
       <br>
       <div id="tabel-user" class="table-responsive">
+        @if (session('success_user'))
+        <div class="alert alert-success text-center" role="alert">
+          {{ session('success_user')}}
+        </div>
+        @endif
         <h3 class="text-center">USER</h3>
         <table class="table table-bordered">
           <thead class="thead-light">
@@ -80,6 +85,11 @@
       </div>
       <br>
       <div id="tabel-company" class="table-responsive">
+        @if (session('success_company'))
+        <div class="alert alert-success text-center" role="alert">
+          {{ session('success_company')}}
+        </div>
+        @endif
         <h3 class="text-center">PERUSAHAAN</h3>
         <table class="table table-bordered">
           <thead class="thead-light">
@@ -111,6 +121,11 @@
       </div>
       <br>
       <div id="tabel-lowongan" class="table-responsive">
+        @if (session('success_job'))
+        <div class="alert alert-success text-center" role="alert">
+          {{ session('success_job')}}
+        </div>
+        @endif
         <h3 class="text-center">LOWONGAN</h3>
         <table class="table table-bordered">
           <thead class="thead-light">
@@ -133,13 +148,18 @@
               </td>
               <td>{{$item->lokasi}}</td>
               <td>{{$item->jobs_description}}</td>
-              <td><button class="btn btn-danger">Delete</button></td>
+              <td><button class="btn btn-danger delete-job" data-id="{{$item->jobs_id}}">Delete</button></td>
               @endforeach
           </tbody>
         </table>
       </div>
       <br>
       <div id="tabel-sharing" class="table-responsive">
+        @if (session('success_sharing'))
+        <div class="alert alert-success text-center" role="alert">
+          {{ session('success_sharing')}}
+        </div>
+        @endif
         <h3 class="text-center">SHARING</h3>
         <table class="table table-bordered">
           <thead class="thead-light">
@@ -156,16 +176,25 @@
 
             <tr>
               <td>{{$item->user->name}}</td>
-              <td>{{$item->user->disabilitas}}</td>
+              @foreach ($disabilitas as $key =>$value)
+              @if($item->disabilitas == $key)
+              <td>{{$value}}</td>
+              @endif
+              @endforeach
               <td>Data Analyst</td>
               <td>{{$item->deskripsi}}</td>
-              <td><button class="btn btn-danger delete-sharing">Delete</button></td>
+              <td><button class="btn btn-danger delete-sharing" data-id="{{$item->sharing_id}}">Delete</button></td>
           </tbody>
           @endforeach
         </table>
       </div>
       <br>
       <div id="tabel-pelatihan" class="table-responsive">
+        @if (session('success'))
+        <div class="alert alert-success text-center" role="alert">
+          {{ session('success')}}
+        </div>
+        @endif
         <h3 class="text-center">PELATIHAN</h3>
         <a href="{{route('admin.show.add.pelatihan')}}" class="btn btn-secondary">Tambah Pelatihan</a>
         <table class="table table-bordered">
@@ -251,7 +280,13 @@
                 console.log($(this).data('id'))
                 let id = $(this).data('id')
                 $('#modal-delete-admin').modal('show')
-                $('#modal-delete-admin').find('#deletePelatihan').attr('action',`/admin/deletePelatihan/${id}`)
+                $('#modal-delete-admin').find('#deletePelatihan').attr('action',`/admin/deleteSharing/${id}`)
+  });
+    $('.delete-job').on('click',function(){
+                console.log($(this).data('id'))
+                let id = $(this).data('id')
+                $('#modal-delete-admin').modal('show')
+                $('#modal-delete-admin').find('#deletePelatihan').attr('action',`/admin/deleteJobs/${id}`)
   });
 
   </script>

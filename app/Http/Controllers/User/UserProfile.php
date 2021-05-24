@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\ApplyLowongan;
 use App\Models\cv;
 use App\Models\User;
 use Exception;
@@ -16,14 +17,17 @@ class UserProfile extends Controller
 {
     private $disabilitas = [0 => 'Tuna rungu', 1 => 'Tuna wicara', 2 => 'Lumpuh', 3 => 'Disleksia',];
     private $lokasi = [0 => 'Bogor', 1 => 'Bandung', 2 => 'Jakarta', 3 => 'Yogyakarta', 4 => 'Medan'];
+    private $status = [0 => 'Menunggu konfirmasi', 1 => 'diterima', 2 => 'ditolak'];
     public function index($id)
     {
         $ds = $this->disabilitas;
         $usr = User::find($id);
         $cv = cv::where('id', $id)->first();
         $lokasi = $this->lokasi;
+        $status = $this->status;
+        $apply = ApplyLowongan::where('id', Auth::id())->get();
         if (Auth::check()) {
-            return view('profile', compact('usr', 'ds', 'lokasi', 'cv'));
+            return view('profile', compact('usr', 'ds', 'lokasi', 'cv', 'status', 'apply'));
         } else {
             return redirect('/');
         }

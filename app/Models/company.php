@@ -25,7 +25,11 @@ class company extends Authenticatable
     ];
     public function jobs()
     {
-        return $this->hasOne(company::class);
+        return $this->hasMany(jobs::class);
+    }
+    public function ApplyLowongan()
+    {
+        return $this->hasMany(ApplyLowongan::class);
     }
     /**
      * The attributes that should be hidden for arrays.

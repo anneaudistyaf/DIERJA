@@ -31,6 +31,10 @@ Route::group([
     Route::get('/editlowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'edit'])->name('editlowongan');
     Route::post('/updatelowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'update'])->name('updatelowongan');
     Route::delete('/deleteLowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'delete'])->name('deletelowongan');
+
+
+    Route::get('/lamaran', [App\Http\Controllers\company\CompanynApplyController::class, 'index'])->name('lamaran.perusahaan');
+    Route::get('/updateLamaran/{id}', [App\Http\Controllers\company\CompanynApplyController::class, 'update'])->name('update.lamaran.perusahaan');
 });
 Route::get('/lowongan-perusahaan', [App\Http\Controllers\company\LowonganController::class, 'index'])->name('lowongan-perusahaan');
 Route::get('/detaillowongan/{id}', [App\Http\Controllers\company\LowonganController::class, 'detail'])->name('detaillowongan');

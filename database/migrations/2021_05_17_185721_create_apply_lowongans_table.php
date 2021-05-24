@@ -22,6 +22,8 @@ class CreateApplyLowongansTable extends Migration
             $table->foreign('id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->bigInteger('jobs_id')->unsigned();
             $table->foreign('jobs_id')->references('jobs_id')->on('jobs')->onUpdate('cascade')->onDelete('cascade');
+            $table->bigInteger('company_id')->unsigned();
+            $table->foreign('company_id')->references('company_id')->on('companies')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

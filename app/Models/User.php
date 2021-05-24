@@ -46,6 +46,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(comment::class);
     }
+    public function apply()
+    {
+        return $this->hasMany(ApplyLowongan::class);
+    }
 
     /**
      * The attributes that should be hidden for arrays.

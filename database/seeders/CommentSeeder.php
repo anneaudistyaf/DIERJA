@@ -15,22 +15,6 @@ class CommentSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('kategoris')->insert([
-            [
-
-                'name' => 'Cooking',
-
-            ],
-            [
-
-                'name' => 'Programming',
-
-            ],
-            [
-
-                'name' => 'Musik',
-
-            ],
-        ]);
+        
     }
 }

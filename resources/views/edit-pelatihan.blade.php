@@ -20,6 +20,11 @@
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
+            @if(session('failed'))
+            <div class="alert alert-danger text-center" role="alert">
+                {{ session('failed')}}
+            </div>
+            @endif
             <h1>Edit Pelatihan</h1>
             <br>
             <div class="card">
@@ -143,6 +148,7 @@
     </div>
     <br>
     @include('footer')
+
 </body>
 <script>
     $(document).on("click", ".browse", function() {

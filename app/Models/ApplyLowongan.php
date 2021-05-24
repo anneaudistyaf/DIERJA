@@ -15,4 +15,16 @@ class ApplyLowongan extends Model
         'nama',
         'status',
     ];
+    public function company()
+    {
+        return $this->belongsTo(company::class, 'company_id');
+    }
+    public function jobs()
+    {
+        return $this->belongsTo(jobs::class, 'jobs_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id');
+    }
 }

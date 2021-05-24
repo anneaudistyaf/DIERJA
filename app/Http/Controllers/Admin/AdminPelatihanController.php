@@ -57,7 +57,7 @@ class AdminPelatihanController extends Controller
 
                 ]);
                 if ($validator->fails()) {
-                    dd($request->all());
+                    // dd($request->all());
 
                     return redirect()->back()->with('failed', 'Failed Upload!')->withErrors($validator);
                 }
@@ -72,16 +72,26 @@ class AdminPelatihanController extends Controller
                 $pelatihan->judul = $request->judul;
                 $pelatihan->author = $request->author;
                 $pelatihan->kategori_id = $request->kategori;
-                $pelatihan->thumbnail = $namafile1;
-                $pelatihan->video = $namavideo;
+                $pelatihan->thumbnail = 'asdasdasd';
+                $pelatihan->video = 'asdasdsa';
                 $pelatihan->deskripsi = $request->deskripsi;
+                // $pelatihan->judul = 'ASsasdsa';
+                // $pelatihan->author = 'asdasdasd';
+                // $pelatihan->kategori_id = 0;
+                // $pelatihan->thumbnail = 'asdasd';
+                // $pelatihan->video = 'asdasdsa';
+                // $pelatihan->deskripsi = 'asdasdasdsa';
 
                 $pelatihan->save();
 
                 DB::commit();
+            } else {
+                // dd($request->all());
+                return redirect()->back()->with('failed', 'Failed Upload!');
             }
         } catch (Exception $e) {
             DB::rollBack();
+            dd($request->all());
             return redirect()->back()->with('failed', 'Failed Upload!');
         }
         return redirect()->route('admin.index')->with('success', 'Edit Success');
@@ -89,7 +99,7 @@ class AdminPelatihanController extends Controller
     public function update(Request $request, $id)
     {
         $pelatihan = pelatihan::find($id);
-        // dd($request->all());
+
         try {
             if ($request->hasFile('file1') && $request->hasFile('file2')) {
                 $validator = Validator::make($request->all(), [
@@ -147,6 +157,30 @@ class AdminPelatihanController extends Controller
     {
         $pelatihan = pelatihan::find($id);
         $pelatihan->delete();
-        return redirect()->route('admin.index')->with('success', 'Delete Success');
+        return redirect()->route('admin.index')->with('success_pelatihan', 'Delete Success');
+    }
+    public function deleteUser($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('admin.index')->with('success_user', 'Delete Success');
+    }
+    public function deleteJobs($id)
+    {
+        $job = jobs::find($id);
+        $job->delete();
+        return redirect()->route('admin.index')->with('success_job', 'Delete Success');
+    }
+    public function deletePerusahaan($id)
+    {
+        $company = company::find($id);
+        $company->delete();
+        return redirect()->route('admin.index')->with('success_company', 'Delete Success');
+    }
+    public function deleteSharing($id)
+    {
+        $sharing = sharing_post::find($id);
+        $sharing->delete();
+        return redirect()->route('admin.index')->with('success_sharing', 'Delete Success');
     }
 }
