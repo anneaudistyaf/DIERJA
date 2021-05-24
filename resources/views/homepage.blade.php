@@ -32,55 +32,34 @@
 
       </div>
       <div class="col-md-8">
+
+
         <div class="row">
+          @foreach ($jobs as $item)
           <div class="col-sm-4">
             <div class="card">
               <div class="card-header text-center">
-                Data Analyst
+                {{$item->posisi}}
               </div>
               <div class="card-body">
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/clock.png')}}" alt=""> Full Time</p>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt=""> Tuna Rungu, Lumpuh</p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/place.png')}}" alt="">
+                  {{$item->lokasi}}
+                </p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/clock.png')}}" alt="">
+                  {{$item->waktu}}
+                </p>
+                <p class="card-text"> {{$item->Deskripsi}}
+                </p>
+                <p class="card-title"> <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt="">
+                  {{$item->disabilitas}}</p>
               </div>
               <div class="card-footer text-center">
-                <a href="">Detail</a>
+                <a href="{{route('detail.lowongan',$item->jobs_id)}}">Detail</a>
               </div>
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-header text-center">
-                Data Analyst
-              </div>
-              <div class="card-body">
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/clock.png')}}" alt=""> Part Time</p>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt=""> Tuna Wicara</p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="">Detail</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-header text-center">
-                Data Analyst
-              </div>
-              <div class="card-body">
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/place.png')}}" alt=""> Jakarta</p>
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/clock.png')}}" alt=""> Internship </p>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <p class="card-title"> <img class="img-fluid" src="{{url('../images/disabled.png')}}" alt=""> Disleksia </p>
-              </div>
-              <div class="card-footer text-center">
-                <a href="">Detail</a>
-              </div>
-            </div>
-          </div>
+          @endforeach
+
         </div>
       </div>
       <div class="col-md-2">
@@ -169,24 +148,26 @@
       <div class="col-sm-10">
         <h1>Sharing Pengalaman</h1>
         <br>
+        @foreach ($sharing as $item)
         <div class="card-columns">
           <div class="card border-secondary">
             <div class="row">
               <div class="col-sm-2 text-center">
-                <img class="img-fluid" src="{{url('../images/profpic.png')}}" alt="">
+                {{-- <img class="img-fluid" src="{{url('../images/profpic.png')}}" alt=""> --}}
               </div>
               <div class="col-sm-10">
+
                 <div class="card-body">
-                  <h4 class="card-title">David Sukonto</h4>
-                  <h6>Tuna Wicara</h6>
+                  <h4 class="card-title">{{$item->user->name}}</h4>
+                  <h6>{{$item->user->disabilitas}}</h6>
                   <p class="text-muted">Data Analyst</p>
-                  <p class="card border-secondary">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem
-                    ipsum Lorem ipsum Lorem ipsum</p>
+                  <p class="card border-secondary">{{$item->konten}}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        @endforeach
         <br>
       </div>
       <div class="col-sm-1"></div>

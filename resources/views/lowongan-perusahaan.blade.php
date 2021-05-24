@@ -65,7 +65,7 @@
                         <a href="{{url('/company/editlowongan',$item->jobs_id)}}">Edit Lowongan</a>
                     </div>
                     <div class="col-sm-6 text-right">
-                        <a href="" data-toggle="modal" data-target=".bd-delete-modal-lowongan" class="delete-lowongan"
+                        <a data-toggle="modal" data-target=".bd-delete-modal-lowongan" class="delete-lowongan"
                             data-id="{{$item->jobs_id}}">Delete Lowongan</a>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
         $('.delete-lowongan').on('click',function(){
                     console.log($(this).data('id'))
                     let id = $(this).data('id')
-                    // $('#modal-delete-lowongan').modal('show')
+                    $('#modal-delete-lowongan').modal('show')
                     $('#modal-delete-lowongan').find('#deleteLowongan').attr('action',`/company/deleteLowongan/${id}`)
       });
 

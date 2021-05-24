@@ -24,10 +24,11 @@ class UserCvController extends Controller
             return view('formcv', compact('cv'));
         }
     }
-    public function add(Request $request)
+    public function add(Request $request, $id)
     {
         // dd($request->all());
 
+        $cv = cv::where('id', $id)->first();
 
         $validator = Validator::make($request->all(), [
             'keahlian' => ['required'],
@@ -49,7 +50,7 @@ class UserCvController extends Controller
         }
         try {
             DB::beginTransaction();
-            $cv = new cv;
+            // $cv = new cv;
             $cv->keahlian = $request->keahlian;
             $cv->pengalamanKerja = $request->pengalamanKerja;
             $cv->tahunAwalKerja = $request->tahunAwalKerja;

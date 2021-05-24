@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 // Route::view('/{path?}', 'test');
 Route::view('/test', 'test');
-Route::view('/', 'homepage')->name('homepage');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 
 // Route::view('/lowongan', 'lowongan')->name('lowongan');
 
@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth:web'], function () {
         Route::get('/edit-user/{id}', [App\Http\Controllers\User\UserProfile::class, 'edit']);
         Route::post('/update-user/{id}', [App\Http\Controllers\User\UserProfile::class, 'Update'])->name('update.user');
         Route::get('/edit-cv/{id}', [App\Http\Controllers\User\UserCvController::class, 'edit'])->name('edit.cv');
-        Route::post('/add-cv', [App\Http\Controllers\User\UserCvController::class, 'add'])->name('add.cv');
+        Route::post('/add-cv/{id}', [App\Http\Controllers\User\UserCvController::class, 'add'])->name('add.cv');
     });
 });
 Route::get('/sharing', [\App\Http\Controllers\SharingController::class, 'index'])->name('sharing');
