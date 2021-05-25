@@ -18,9 +18,25 @@ class CompanynApplyController extends Controller
     public function index()
     {
         // dd(Auth::guard('company')->user()->company_id);
+        $jobs =  DB::table('apply_lowongans')
+            ->select('posisi')
+            ->groupBy('posisi')
+            ->get();
+
+        $hasilJobs = array();
+        foreach ($jobs as $data) {
+            $array_detail = ApplyLowongan::where([
+                    ['posisi', $data->posisi],
+                    ['company_id', Auth::guard('company')->user()->company_id],
+                ])
+                ->orderBy('jobs_id', 'asc')
+                ->get();
+            array_push($hasilJobs, $array_detail);
+        }
+        // dd($hasilJobs);
         $apply = ApplyLowongan::where('company_id', Auth::guard('company')->user()->company_id)->get();
         $ds = $this->disabilitas;
-        return view('lamaran', compact('apply', 'ds'));
+        return view('lamaran', compact('hasilJobs', 'ds', 'apply', 'jobs'));
     }
     public function update(Request $request, $id)
     {

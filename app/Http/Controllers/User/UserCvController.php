@@ -29,6 +29,7 @@ class UserCvController extends Controller
     {
         $cv = cv::where('id', $id)->first();
 
+
         return view('cvuser', compact('cv'));
     }
     public function add(Request $request, $id)

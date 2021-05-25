@@ -110,6 +110,8 @@
     </div>
 
     <br>
+    @if(empty($cv))
+    @else
     <div class="cv">
         <div class="row judul-cv">
             <div class="col-sm-2"></div>
@@ -185,6 +187,7 @@
         </div>
 
     </div>
+    @endif
     <br>
     @include('footer')
 </body>

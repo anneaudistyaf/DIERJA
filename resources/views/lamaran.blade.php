@@ -25,37 +25,53 @@
                 {{ session('success')}}
             </div>
             @endif
-            <h3 class="text-center">Pelamar Marketing</h3>
+            @php($i=0);
+            @foreach ($hasilJobs as $item)
+
+            <h3 class="text-center">Pelamar {{$jobs[$i]->posisi}} </h3>
             <br>
+            @foreach ($item as $items)
             <div class="waiting">
+                @if($items->status != 0)
+                {{-- <h5 class="alert alert-danger text-center">Belum ada pelamar</h5> --}}
+                @else
                 <h5><u>Menunggu Konfirmasi</u></h5>
+                @endif
                 <table class="table-wait">
-                    @foreach ($apply as $item)
 
-                    @if($item->status ==0)
 
+                    @if($items->status == 0)
+
+                    <tr>
+                        <td>Posisi</td>
+                        <td> : </td>
+                        <td>{{$items->posisi}}</td>
+                    </tr>
                     <tr>
                         <td>Nama</td>
                         <td> : </td>
-                        <td>{{$item->nama}}</td>
+                        <td>{{$items->nama}}</td>
                     </tr>
                     <tr>
                         <td>Disabilitas</td>
                         <td> : </td>
                         @foreach ($ds as $key =>$value)
-                        @if($item->user->disabilitas == $key)
+
+
+                        @if($items->user->disabilitas == $key)
 
                         <td>{{$value}}</td>
                         @endif
+
                         @endforeach
                     </tr>
                 </table>
                 <br>
                 <div class="d-grid gap-2 d-md-block">
 
-                    <form action="{{route('company.update.lamaran.perusahaan',$item->lowongan_id)}}" action="post">
+                    <form action="{{route('company.update.lamaran.perusahaan',$items->lowongan_id)}}" action="post">
                         @csrf
-                        <a href="{{url('/User/CV',$item->user->id)}}">
+                        <a href="{{url('/User/CV',$items->id)}}">
                             <button class="btn btn-success" type="button">Lihat Portofolio</button>
                         </a>
                         <button name="status" class="btn btn-primary" value="1" role="button">Terima Lamaran</button>
@@ -64,22 +80,36 @@
                     </form>
                 </div>
                 @endif
-                @endforeach
             </div>
+            @endforeach
+            @php($i++)
+            @endforeach
             <br>
+
+            @php($a=0);
+            @foreach ($hasilJobs as $array)
             <div class="accept">
 
-                <h5><u>Pelamar diterima</u></h5>
+                <h5><u>Pelamar diterima di {{$jobs[$a]->posisi}}</u></h5>
                 <table class="table-acc">
-                    @foreach ($apply as $item)
-                    @if($item->status !=1 )
+                    @foreach ($array as $items)
+                    @if($items->status != 1 )
                     @else
                     <tr>
-                        <td>{{$item->nama}}</td>
+                        <td>Posisi</td>
+                        <td> : </td>
+                        <td>{{$items->posisi}}</td>
                     </tr>
                     <tr>
+                        <td>Nama</td>
+                        <td> : </td>
+                        <td>{{$items->nama}}</td>
+                    </tr>
+                    <tr>
+                        <td>Disabilitas</td>
+                        <td> : </td>
                         @foreach ($ds as $key =>$value)
-                        @if($item->user->disabilitas == $key)
+                        @if($items->user->disabilitas == $key)
 
                         <td>{{$value}}</td>
                         @endif
@@ -88,7 +118,10 @@
                     @endif
                     @endforeach
                 </table>
+                <br>
             </div>
+            @php($a++)
+            @endforeach
         </div>
     </div>
     <br>
