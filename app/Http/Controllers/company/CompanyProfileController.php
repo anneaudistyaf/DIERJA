@@ -60,6 +60,19 @@ class CompanyProfileController extends Controller
 
                 DB::commit();
             } else {
+                $validator = Validator::make($request->all(), [
+
+                    'nama' => ['required', 'string', 'max:255'],
+                    'email' => ['required', 'string', 'email', 'max:255'],
+                    'phone' => ['required', 'string', 'max:255'],
+                    'sektor' => ['required'],
+                    'alamat' => ['required'],
+                    'deskripsi' => ['required'],
+                ]);
+                if ($validator->fails()) {
+
+                    return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
+                }
                 DB::beginTransaction();
                 $company->company_name = $request->nama;
                 $company->email = $request->email;
@@ -74,8 +87,8 @@ class CompanyProfileController extends Controller
             }
         } catch (Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
+            return redirect()->back()->with('failed', 'Failed Update!');
         }
-        return redirect()->route('company.profile-perusahaan', $id)->with('succes', 'Edit Success');
+        return redirect()->route('company.profile-perusahaan', $id)->with('success', 'Edit Success');
     }
 }

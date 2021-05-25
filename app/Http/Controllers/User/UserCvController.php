@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\cv;
+use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +24,12 @@ class UserCvController extends Controller
         } else {
             return view('formcv', compact('cv'));
         }
+    }
+    public function showCv($id)
+    {
+        $cv = cv::where('id', $id)->first();
+
+        return view('cvuser', compact('cv'));
     }
     public function add(Request $request, $id)
     {
@@ -45,7 +52,7 @@ class UserCvController extends Controller
 
         ]);
         if ($validator->fails()) {
-            dd($request->all());
+
             return redirect()->route('edit.cv', Auth::id())->withErrors($validator);
         }
         try {
@@ -67,8 +74,8 @@ class UserCvController extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            return redirect()->route('edit.cv', Auth::id())->withErrors($validator)->with('errorMessage', 'Edit data failed');
+            return redirect()->route('edit.cv', Auth::id())->withErrors($validator)->with('error', 'Edit data failed');
         }
-        return redirect()->route('profile', Auth::id())->with('succes', 'Edit data Success');
+        return redirect()->route('profile', Auth::id())->with('success', 'Edit data Success');
     }
 }

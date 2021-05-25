@@ -34,16 +34,25 @@
                     <div class="form-group">
                         <input type="text" name="name" class="form-control border-secondary" id="formGroupName"
                             placeholder="Nama Lengkap">
+                        @if( $errors->first('name'))
+                        <div class="alert-danger">{{ $errors->first('name')}}</div>
+                        @endif
                     </div>
                     <br>
                     <div class="form-group">
                         <input type="email" name="email" class="form-control border-secondary" id="formGroupEmail"
                             placeholder="Email">
+                        @if( $errors->first('email'))
+                        <div class="alert-danger">{{ $errors->first('email')}}</div>
+                        @endif
                     </div>
                     <br>
                     <div class="form-group">
                         <input type="password" name="password" class="form-control border-secondary"
                             id="formGroupPassword" placeholder="Kata Sandi">
+                        @if( $errors->first('password'))
+                        <div class="alert-danger">{{ $errors->first('password')}}</div>
+                        @endif
                     </div>
                     <br>
                     <div class="form-group">
@@ -103,6 +112,9 @@
                     <div class="row">
                         <div class="col-sm-1"></div>
                         <div class="col-sm-7">
+                            @if( session('error'))
+                            <div class="alert-danger">Email and/or password invalid.</div>
+                            @endif
                             <form method="POST" action="{{route('login')}}" id="regisLogin">
                                 @csrf
                                 <div class="form-group">
@@ -130,6 +142,13 @@
     </div>
     <br>
     @include('footer')
+    @if(session('error'))
+    <script>
+        $(function() {
+    $('#exampleModalCenter').modal('show');
+});
+    </script>
+    @endif
     <script>
         $('#login').on('click',function(){
    $('#exampleModalCenter').modal('show')
@@ -144,6 +163,7 @@
 //    $('#register-page').find('#regisForm').attr('action',"/register")
 //   });
     </script>
+
 </body>
 
 </html>

@@ -36,7 +36,7 @@ class User extends Authenticatable
     }
     public function cv()
     {
-        return $this->hasOne(cv::class);
+        return $this->hasOne(cv::class, 'cv_id');
     }
     public function sharing_post()
     {

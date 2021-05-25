@@ -33,6 +33,9 @@
               <label for="formGroupExampleInput">Keahlian</label>
               <input value="{{$cv->keahlian}}" name="keahlian" type="text" class="form-control"
                 id="formGroupExampleInput">
+              @if( $errors->first('keahlian'))
+              <div class="alert-danger">{{ $errors->first('keahlian')}}</div>
+              @endif
             </div>
           </div>
           <div class="card-body">
@@ -40,6 +43,9 @@
               <label for="formGroupExampleInput">Pengalaman Kerja</label>
               <input value="{{$cv->pengalamanKerja}}" name="pengalamanKerja" type="text" class="form-control"
                 id="formGroupExampleInput">
+              @if( $errors->first('pengalamanKerja'))
+              <div class="alert-danger">{{ $errors->first('pengalamanKerja')}}</div>
+              @endif
             </div>
           </div>
           <div class="card-body">
@@ -70,6 +76,9 @@
               <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Kerja</label>
               <textarea value="{{$cv->deskripsiKerja}}" name="deskripsiKerja" class="form-control"
                 id="exampleFormControlTextarea1" rows="3">{{$cv->deskripsiKerja}}</textarea>
+              @if( $errors->first('deskripsiKerja'))
+              <div class="alert-danger">{{ $errors->first('deskripsiKerja')}}</div>
+              @endif
             </div>
           </div>
           <div class="card-body">
@@ -77,6 +86,9 @@
               <label for="formGroupExampleInput">Edukasi</label>
               <input value="{{$cv->edukasi}}" name=" edukasi" type="text" class="form-control"
                 id="formGroupExampleInput">
+              @if( $errors->first('edukasi'))
+              <div class="alert-danger">{{ $errors->first('edukasi')}}</div>
+              @endif
             </div>
           </div>
           <div class="card-body">
@@ -106,6 +118,9 @@
             <div class="form-group">
               <label for="formGroupExampleInput">Skill</label>
               <input value="{{$cv->skill}}" name="skill" type="text" class="form-control" id="formGroupExampleInput">
+              @if( $errors->first('skill'))
+              <div class="alert-danger">{{ $errors->first('skill')}}</div>
+              @endif
             </div>
           </div>
           <div class="card-body">
@@ -113,6 +128,9 @@
             <div class="input-group">
               <input value="{{$cv->sosialMedia}}" name="sosialMedia" type="text" class="form-control"
                 aria-label="Text input with dropdown button">
+              @if( $errors->first('sosilaMedia'))
+              <div class="alert-danger">{{ $errors->first('sosialMedia')}}</div>
+              @endif
               <div class="input-group-append">
                 <select name="optionSosialMedia" class="form-select form-control" id="inputGroupSelect03">
                   <option selected>Sosial Media</option>

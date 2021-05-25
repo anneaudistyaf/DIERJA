@@ -21,6 +21,11 @@
     enctype="multipart/form-data">
     @csrf
     <div class="row">
+      @if(session('failed'))
+      <div class="alert alert-danger text-center" role="alert">
+        {{ session('failed')}}
+      </div>
+      @endif
       <div class="col-sm-3"></div>
       <div class="col-sm-6">
         <div class="upload-foto text-center">
@@ -42,21 +47,31 @@
       <div class="col-sm-8">
         <div class="card">
           <div class="card-body">
+
             <form>
               <div class="form-group">
                 <label for="formGroupExampleInput">Nama Perusahaan</label>
                 <input name="nama" value="{{$company->company_name}}" type="text" class="form-control"
                   id="formGroupExampleInput">
+                @if( $errors->first('nama'))
+                <div class="alert-danger">{{ $errors->first('nama')}}</div>
+                @endif
               </div><br>
               <div class="form-group">
                 <label for="formGroupExampleInput2">Email</label>
                 <input name="email" value="{{$company->email}}" type="email" class="form-control"
                   id="formGroupExampleInput2">
+                @if( $errors->first('email'))
+                <div class="alert-danger">{{ $errors->first('email')}}</div>
+                @endif
               </div><br>
               <div class="form-group">
                 <label for="formGroupExampleInput2">Nomor Telpon</label>
                 <input name="phone" value="{{$company->phone}}" type="text" class="form-control"
                   id="formGroupExampleInput2">
+                @if( $errors->first('phone'))
+                <div class="alert-danger">{{ $errors->first('phone')}}</div>
+                @endif
               </div><br>
               <div class="form-group">
                 <label for="formGroupExampleInput2">Sektor</label>
@@ -72,11 +87,17 @@
                 <label for="exampleTextarea">Alamat Perusahaan</label>
                 <textarea name="alamat" class="form-control" id="exampleTextarea"
                   rows="3">{{$company->alamat}}</textarea>
+                @if( $errors->first('alamat'))
+                <div class="alert-danger">{{ $errors->first('alamat')}}</div>
+                @endif
               </div><br>
               <div class="form-group">
                 <label for="exampleTextarea">Deskripsi Perusahaan Perusahaan</label>
                 <textarea name="deskripsi" class="form-control" id="exampleTextarea"
                   rows="4">{{$company->deskripsi}}</textarea>
+                @if( $errors->first('deskripsi'))
+                <div class="alert-danger">{{ $errors->first('deskripsi')}}</div>
+                @endif
               </div><br>
               <div class="button-submit text-center">
                 <button class="btn btn-primary">SIMPAN</button>

@@ -22,7 +22,7 @@ class UserPost extends Controller
 
         ]);
         if ($validator->fails()) {
-            return redirect()->back()->with('errorMessage', 'failed upload!')->withErrors($validator);
+            return redirect()->back()->with('error', 'failed upload!')->withErrors($validator);
         }
 
         try {
@@ -37,6 +37,6 @@ class UserPost extends Controller
             DB::rollBack();
             return redirect('/');
         }
-        return redirect()->back()->with('SuccesMessage', 'Post Succes Full');
+        return redirect()->back()->with('success', 'Post Success Full');
     }
 }

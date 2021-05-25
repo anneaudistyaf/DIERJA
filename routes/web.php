@@ -24,8 +24,8 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 // Route::view('/lowongan', 'lowongan')->name('lowongan');
 
-Route::view('/pelatihan', 'pelatihan');
-Route::view('/detailpelatihan', 'detailpelatihan')->name('detailpelatihan');
+Route::get('/pelatihan', [App\Http\Controllers\PelatihanController::class, 'index']);
+Route::get('/detailpelatihan/{id}', [App\Http\Controllers\PelatihanController::class, 'detailpelatihan'])->name('detailpelatihan');
 Route::group(['middleware' => 'auth:web'], function () {
     Route::post('/post.user', [App\Http\Controllers\User\UserPost::class, 'post'])->name('user.post');
     Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
@@ -53,8 +53,10 @@ Route::prefix('User')->group(function () {
     Route::post('/register', [App\Http\Controllers\AuthController::class, 'registerAction'])->name('register');
     Route::get('/login', [App\Http\Controllers\AuthController::class, 'login']);
     Route::post('/login', [App\Http\Controllers\AuthController::class, 'loginAction'])->name('login');
+    Route::get('/CV/{id}', [App\Http\Controllers\User\UserCvController::class, 'showCv']);
 });
 
 Route::get('/lowongan', [App\Http\Controllers\User\LowonganUserController::class, 'index'])->name('lowongan');
 Route::get('/detaillowongan/{id}', [App\Http\Controllers\User\LowonganUserController::class, 'detail'])->name('detail.lowongan');
 Route::post('/detailLowongan/{id}', [App\Http\Controllers\User\LowonganUserController::class, 'registerJobs'])->name('regis.lowongan');
+Route::get('/detailPerusahaan/{id}', [App\Http\Controllers\User\LowonganUserController::class, 'detailPerusahaan'])->name('detail.perusahaan');

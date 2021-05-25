@@ -54,9 +54,9 @@ class LowonganController extends Controller
             DB::commit();
         } catch (Exception $e) {
             DB::rollBack();
-            return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
+            return redirect()->back()->with('failed', 'Failed Upload!')->withErrors($validator);
         }
-        return redirect('company/lowongan-perusahaan')->with('success', 'Success Update!');
+        return redirect('company/lowongan-perusahaan')->with('success', 'Success Upload!');
     }
     public function edit($id)
     {
@@ -74,7 +74,7 @@ class LowonganController extends Controller
             'jobs_description' => ['required'],
         ]);
         if ($validator->fails()) {
-            dd($request->all());
+
             return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
         }
         try {
@@ -97,6 +97,6 @@ class LowonganController extends Controller
     {
         $jobs = jobs::find($id);
         $jobs->delete();
-        return redirect('company/lowongan-perusahaan')->with('success', 'Success Update!');
+        return redirect('company/lowongan-perusahaan')->with('success', 'Delete Success');
     }
 }

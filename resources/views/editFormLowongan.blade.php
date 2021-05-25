@@ -67,6 +67,9 @@
                         <div class="col-sm-9">
                             <input value="{{$jobs->posisi}}" name="posisi" type="text" class="form-control"
                                 id="inputPassword" placeholder="Marketing">
+                            @if( $errors->first('posisi'))
+                            <div class="alert-danger">{{ $errors->first('posisi')}}</div>
+                            @endif
                         </div>
                     </div>
                     <br>
@@ -111,6 +114,9 @@
                         <div class="col-sm-9">
                             <textarea name="jobs_description" class="form-control" id="exampleFormControlTextarea1"
                                 rows="3">{{$jobs->jobs_description}}</textarea>
+                            @if( $errors->first('jobs_description'))
+                            <div class="alert-danger">{{ $errors->first('jobs_description')}}</div>
+                            @endif
                         </div>
                     </div>
                     <br><br>

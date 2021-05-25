@@ -22,7 +22,9 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
                 <h1>{{$jobs->posisi}}</h1>
-                <p>PT.{{$jobs->company->company_name}}</p>
+                <a href="{{route('detail.perusahaan',$jobs->company->company_id)}}">
+                    <p>PT.{{$jobs->company->company_name}}</p>
+                </a>
                 <div class="row">
                     <div class="col-md-6">
                         <p><img class="img-fluid" src="{{url('../images/place.png')}}" alt="">{{$jobs->lokasi}}</p>
@@ -37,7 +39,7 @@
                 <h5>Deskripsi dan Syarat</h5>
                 <p>{{$jobs->jobs_description}}</p>
                 @if(Auth::guard('web')->check())
-                @if(empty($apply))
+                @if(empty($apply) )
                 <form action="{{route('regis.lowongan',$jobs->jobs_id)}}" method="POST">
                     @csrf
                     <a href="">
@@ -45,9 +47,10 @@
                             aria-pressed="true">Kirim CV </button>
                     </a>
                 </form>
-                @else
+                @elseif($apply->status == 0)
                 <button class="btn btnlowongan btn-rounded btn-secondary" role="button" aria-pressed="true">Menunggu
                     Konfirmasi </button>
+                @else
 
                 @endif
                 @endif

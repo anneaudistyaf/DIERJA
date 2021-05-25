@@ -40,6 +40,11 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <br>
+            @if (session('success'))
+            <div class="alert alert-success text-center" role="alert">
+                {{ session('success')}}
+            </div>
+            @endif
             <div class="card-columns">
                 @foreach ($sharing as $item)
                 <div class="card border-secondary">

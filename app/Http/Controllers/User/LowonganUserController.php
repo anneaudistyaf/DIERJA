@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\ApplyLowongan;
+use App\Models\company;
 use App\Models\jobs;
 use App\Models\User;
 use Exception;
@@ -59,5 +60,11 @@ class LowonganUserController extends Controller
             return redirect()->back()->with('failed', 'CV tidak terkirim');
         }
         return redirect()->back()->with('success', 'CV terkirim');
+    }
+    public function detailPerusahaan($id)
+    {
+        $company = company::find($id);
+
+        return view('detail-perusahaan', compact('company'));
     }
 }

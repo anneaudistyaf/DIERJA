@@ -91,6 +91,6 @@ class UserProfile extends Controller
             DB::rollBack();
             return redirect()->back()->with('failed', 'Failed Update!')->withErrors($validator);
         }
-        return redirect()->route('profile', $id)->with('succes', 'Edit Success');
+        return redirect()->route('profile', $id)->with('success', 'Edit Success');
     }
 }

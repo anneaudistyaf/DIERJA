@@ -55,7 +55,9 @@
 
                     <form action="{{route('company.update.lamaran.perusahaan',$item->lowongan_id)}}" action="post">
                         @csrf
-                        <button class="btn btn-success" href="" type="button">Lihat Portofolio</button>
+                        <a href="{{url('/User/CV',$item->user->id)}}">
+                            <button class="btn btn-success" type="button">Lihat Portofolio</button>
+                        </a>
                         <button name="status" class="btn btn-primary" value="1" role="button">Terima Lamaran</button>
                         <button name="status" class="btn btn-danger" value="2" role="button">Tolak Lamaran</button>
 

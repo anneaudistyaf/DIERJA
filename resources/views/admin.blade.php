@@ -214,7 +214,11 @@
             <tr>
               <td>{{$item->judul}}</td>
               <td>{{$item->author}}</td>
-              <td>{{$item->kategori}}</td>
+              @foreach ($kategori as $key => $value)
+              @if($item->kategori_id == $key)
+              <td>{{$value}}</td>
+              @endif
+              @endforeach
               <td>{{$item->deskripsi}}</td>
               <td>{{$item->video}}</td>
               <td>

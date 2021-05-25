@@ -28,7 +28,8 @@ class AdminPelatihanController extends Controller
         $sharing = sharing_post::all();
         $disabilitas = $this->disabilitas;
         $lokasi = $this->lokasi;
-        return view('admin', compact('pelatihan', 'jobs', 'company', 'user', 'sharing', 'disabilitas', 'lokasi'));
+        $kategori = $this->kategori;
+        return view('admin', compact('pelatihan', 'jobs', 'company', 'user', 'sharing', 'disabilitas', 'lokasi', 'kategori'));
     }
     public function showAdd()
     {
@@ -72,8 +73,8 @@ class AdminPelatihanController extends Controller
                 $pelatihan->judul = $request->judul;
                 $pelatihan->author = $request->author;
                 $pelatihan->kategori_id = $request->kategori;
-                $pelatihan->thumbnail = 'asdasdasd';
-                $pelatihan->video = 'asdasdsa';
+                $pelatihan->thumbnail = $namafile1;
+                $pelatihan->video = $namavideo;
                 $pelatihan->deskripsi = $request->deskripsi;
                 // $pelatihan->judul = 'ASsasdsa';
                 // $pelatihan->author = 'asdasdasd';

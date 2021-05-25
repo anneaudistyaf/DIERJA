@@ -57,6 +57,19 @@ class AuthController extends Controller
 
     public function registerAction(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+
+        ]);
+
+
+
+        // $this->validatorRegister($request->all())->validate();
+        if ($validator->fails()) {
+            return redirect()->back()->with('error_register', 'register failed')->withErrors($validator);
+        }
 
         try {
             DB::beginTransaction();

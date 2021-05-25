@@ -22,6 +22,11 @@
         <div class="col-md-9">
             <h3>List Lowongan</h3>
             <br>
+            @if (session('success'))
+            <div class="alert alert-success text-center" role="alert">
+                {{ session('success')}}
+            </div>
+            @endif
             <div class="row lowongan">
                 {{-- <div class="col-md-4">
                     <div class="card">

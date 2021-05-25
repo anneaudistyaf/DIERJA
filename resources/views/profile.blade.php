@@ -24,6 +24,11 @@
         <div class="row judul-profile">
             <div class="col-sm-2"></div>
             <div class="col-sm-6">
+                @if (session('success'))
+                <div class="alert alert-success text-center" role="alert">
+                    {{ session('success')}}
+                </div>
+                @endif
                 <div class="judul">
                     <h1>PROFILE</h1>
                 </div>

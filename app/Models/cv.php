@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class cv extends Model
 {
     use HasFactory;
+    protected $table = 'cvs';
+    protected $primaryKey = 'cv_id';
     protected $fillable = [
         'keahlian',
         'pengalamanKerja',
@@ -23,6 +25,6 @@ class cv extends Model
     ];
     public function user()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsTo(User::class, 'id');
     }
 }
