@@ -85,7 +85,7 @@
 							Masuk
 						</a>
 						<ul class="dropdown-menu dropdown-start" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="{{ url('User/register')}}">User</a></li>
+							<li><a class="dropdown-item" href="/User/register">User</a></li>
 							<li><a class="dropdown-item" href="{{url('company/register')}}">Perusahaan</a></li>
 						</ul>
 					</li>
