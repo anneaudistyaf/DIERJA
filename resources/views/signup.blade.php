@@ -28,7 +28,7 @@
             <div class="col-sm-4">
             </div>
             <div class="col-sm-4">
-                <form action="User/register" method="post">
+                <form action="/User/register" method="post">
                     @csrf
                     <h1 class="text-center">DAFTAR</h1>
                     <div class="form-group">
