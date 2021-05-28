@@ -35,6 +35,8 @@
 
 
         <div class="row">
+          @if(empty($jobs))
+          @else
           @foreach ($jobs as $item)
           <div class="col-sm-4">
             <div class="card">
@@ -59,7 +61,7 @@
             </div>
           </div>
           @endforeach
-
+          @endif
         </div>
       </div>
       <div class="col-md-2">
@@ -148,6 +150,8 @@
       <div class="col-sm-10">
         <h1>Sharing Pengalaman</h1>
         <br>
+        @if(empty($sharing))
+        @else
         @foreach ($sharing as $item)
         <div class="card-columns">
           <div class="card border-secondary">
@@ -168,6 +172,7 @@
           </div>
         </div>
         @endforeach
+        @endif
         <br>
       </div>
       <div class="col-sm-1"></div>
