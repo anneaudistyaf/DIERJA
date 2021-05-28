@@ -115,7 +115,7 @@
                             @if( session('error'))
                             <div class="alert-danger">Email and/or password invalid.</div>
                             @endif
-                            <form method="POST" action="{{route('login')}}" id="regisLogin">
+                            <form method="POST" action="/User/login" id="regisLogin">
                                 @csrf
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control border-secondary"
@@ -130,7 +130,7 @@
                                 <div class="text-center">
                                     <button class="btn border-secondary btn-login">Login</button>
                                     <br><br>
-                                    <p>Belum memiliki akun? <a href="{{url('/register')}}">SignUp</a></p>
+                                    <p>Belum memiliki akun? <a href="/User/register">SignUp</a></p>
                                 </div>
                             </form>
                         </div>

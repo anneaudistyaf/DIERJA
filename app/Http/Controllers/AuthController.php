@@ -88,7 +88,7 @@ class AuthController extends Controller
             DB::rollBack();
             $output = $e->getMessage();
             $validator = $this->validatorUser($request->all())->validate();
-
+            dd($request->all());
             return redirect('User/register')->with('error_register')->withErrors([$validator]);
         }
 
