@@ -66,7 +66,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-item" href="{{ route ('logout')}}">Logout</a>
+						<a class="nav-link" href="{{ route ('logout')}}">Logout</a>
 					</li>
 					@elseif(Auth::guard('company')->check())
 					<li class="nav-item">
