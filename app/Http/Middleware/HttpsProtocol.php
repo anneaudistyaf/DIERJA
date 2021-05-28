@@ -11,8 +11,16 @@ class HttpsProtocol
 
     public function handle(Request $request, Closure $next)
     {
-        if (!$request->secure() && App::environment() === 'production') {
-            return redirect()->secure($request->getRequestUri());
+        if (!app()->environment('local')) {
+            // for Proxies
+            Request::setTrustedProxies(
+                [$request->getClientIp()],
+                Request::HEADER_X_FORWARDED_ALL
+            );
+
+            if (!$request->isSecure()) {
+                return redirect()->secure($request->getRequestUri());
+            }
         }
 
         return $next($request);
