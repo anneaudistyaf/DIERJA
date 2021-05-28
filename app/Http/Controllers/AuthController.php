@@ -89,7 +89,7 @@ class AuthController extends Controller
             $output = $e->getMessage();
             $validator = $this->validatorUser($request->all())->validate();
             // dd($request->all());
-            return redirect('/pelatihan')->with('error_register')->withErrors([$validator]);
+            return redirect('User/register')->with('error', 'Register Failed')->withErrors([$validator]);
         }
 
         return redirect('User/register')->with('success', 'Register Succes');

@@ -31,6 +31,11 @@
                 <form action="/User/register" method="post">
                     @csrf
                     <h1 class="text-center">DAFTAR</h1>
+                    @if (session('error'))
+                    <div class="alert alert-success text-center" role="alert">
+                        {{ session('error')}}
+                    </div>
+                    @endif
                     <div class="form-group">
                         <input type="text" name="name" class="form-control border-secondary" id="formGroupName"
                             placeholder="Nama Lengkap">
