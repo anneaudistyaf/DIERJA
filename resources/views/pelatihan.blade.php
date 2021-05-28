@@ -52,35 +52,27 @@
         <div class="col-md-1"></div>
     </div>
     <br><br>
+    @php($i=0)
+    @foreach ($sorting as $sort)
     <div class="kategori-programming">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 table-responsive">
-                <h3 id="programming">Programming</h3>
+                <h3 id="programming">{{$category[$i]->kategori->kategori}}</h3>
                 <table class="table table-borderless">
                     <thead>
                         <tr>
-                            @foreach ($pelatihan as $item)
-                            @if($item->kategori_id == 2)
+                            @foreach ($sort as $item)
+                            {{-- 
+                            @if($item->kategori_id == 2) --}}
                             <th scope="col-md-4">
                                 <img src="{{url('../Thumbnail/'.$item->thumbnail)}}" class="img-fluid" alt=""><br>
                                 <a href="{{url('/detailpelatihan',$item->pelatihan_id)}}"
                                     class="text-center">{{$item->judul}}</a>
                             </th>
-                            @endif
+                            {{-- @endif --}}
+
                             @endforeach
-                            {{-- <th scope="col-md-4">
-                                <img src="{{url('../images/html.png')}}" class="img-fluid" alt="">
-                            <a href="" class="text-center">Basic</a>
-                            </th>
-                            <th scope="col-md-4">
-                                <img src="{{url('../images/php.png')}}" class="img-fluid" alt="">
-                                <a href="" class="text-center">PHP</a>
-                            </th>
-                            <th scope="col-md-4">
-                                <img src="{{url('../images/java.png')}}" class="img-fluid" alt="">
-                                <a href="" class="text-center">Java</a>
-                            </th> --}}
                         </tr>
                     </thead>
                 </table>
@@ -89,7 +81,9 @@
         </div>
     </div>
     <br>
-    <div class="kategori-musik">
+    @php($i++)
+    @endforeach
+    {{-- <div class="kategori-musik">
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 table-responsive">
@@ -101,29 +95,17 @@
                             @if($item->kategori_id == 3)
                             <th scope="col-md-4">
                                 <img src="{{url('../Thumbnail/'.$item->thumbnail)}}" class="img-fluid" alt=""><br>
-                                <a href="{{url('/detailpelatihan',$item->pelatihan_id)}}"
-                                    class="text-center">{{$item->judul}}</a>
-                            </th>
-                            @endif
-                            @endforeach
-                            {{-- <th scope="col-md-4">
-                                <img src="{{url('../images/piano.png')}}" class="img-fluid" alt="">
-                            <a href="" class="text-center">Piano</a>
-                            </th>
-                            <th scope="col-md-4">
-                                <img src="{{url('../images/gitar.png')}}" class="img-fluid" alt="">
-                                <a href="" class="text-center">Gitar</a>
-                            </th>
-                            <th scope="col-md-4">
-                                <img src="{{url('../images/bass.png')}}" class="img-fluid" alt="">
-                                <a href="" class="text-center">Bass</a>
-                            </th> --}}
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-            <div class="col-md-1"></div>
-        </div>
+    <a href="{{url('/detailpelatihan',$item->pelatihan_id)}}" class="text-center">{{$item->judul}}</a>
+    </th>
+    @endif
+    @endforeach
+
+    </tr>
+    </thead>
+    </table>
+    </div>
+    <div class="col-md-1"></div>
+    </div>
     </div>
     <div class="kategori-masak">
         <div class="row">
@@ -148,7 +130,7 @@
             </div>
             <div class="col-md-1"></div>
         </div>
-    </div>
+    </div> --}}
     <br><br>
     @include('footer')
 </body>

@@ -66,7 +66,7 @@ class AdminPelatihanController extends Controller
                 $namafile1 = time() . "_" . $file1->getClientOriginalName();
                 $file1->move('Thumbnail', $namafile1);
                 $video = $request->file('file2');
-                $namavideo = $video->getClientOriginalName();
+                $namavideo = time() . "_" . $video->getClientOriginalName();
                 $video->move('video_pelatihan', $namavideo);
                 DB::beginTransaction();
                 $pelatihan = new pelatihan;

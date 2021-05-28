@@ -21,8 +21,8 @@ class pelatihan extends Model
 
 
     ];
-    // public function kategori()
-    // {
-    //     return $this->hasOne(kategori::class);
-    // }
+    public function kategori()
+    {
+        return $this->belongsTo(kategori::class, 'kategori_id');
+    }
 }
