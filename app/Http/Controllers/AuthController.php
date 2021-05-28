@@ -80,7 +80,7 @@ class AuthController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
-            $id = DB::getPdo()->lastInsertId();
+            // $id = DB::getPdo()->lastInsertId();
             $user->save();
 
             DB::commit();
