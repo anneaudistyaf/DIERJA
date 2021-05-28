@@ -61,18 +61,13 @@
                 </tr>
             </table>
             <br><br>
-            <div class="text-center">
-                <a href="{{route('company.edit-perusahaan',$company->company_id)}}"
-                    class="btn btn-primary text-center">Edit profile</a>
-            </div>
-            <br>
-            <div class="text-center">
-                <a href="{{route('company.lowongan-perusahaan')}}" class="btn btn-primary text-center">Lowongan</a>
-            </div>
-            <br>
-            <div class="text-center">
-                <a href="{{route('company.lamaran.perusahaan')}}" class="btn btn-primary text-center">Apply
-                    lamaran</a>
+            <div class="d-grid gap-2 d-md-block">
+                <div class="text-center">
+                <a href="{{route('company.edit-perusahaan',$company->company_id)}}" class="btn btn-primary text-center">Edit profile</a></div>
+                <div class="text-center">
+                <a href="{{route('company.lowongan-perusahaan')}}" class="btn btn-primary text-center">Lowongan</a></div>
+                <div class="text-cent">
+                <a href="{{route('company.lamaran.perusahaan')}}" class="btn btn-primary text-center">Apply lamaran</a></div>
             </div>
         </div>
         <div class="col-md-3"></div>

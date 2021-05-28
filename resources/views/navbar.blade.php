@@ -37,10 +37,10 @@
 						<a class="nav-link"
 							href="{{url('/company/profile-perusahaan',Auth::guard('company')->user()->company_id)}}">Profile</a>
 					</li>
-					@elseif(Auth::guard('web')->check())
+					/*@elseif(Auth::guard('web')->check())
 					<li class="nav-item">
 						<a class="nav-link" href="{{route('profile',Auth::id())}}">Profile</a>
-					</li>
+					</li>*/
 
 					@endif
 					<li class="nav-item">
@@ -60,15 +60,13 @@
 				@endif
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 navbar-right">
 					@if(Auth::guard('web')->check())
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-							data-bs-toggle="dropdown" aria-expanded="false">
+					<li class="nav-item">
+						<a class="nav-link" href="{{route('profile',Auth::id())}}" role="button">
 							{{Auth::user()->name}}
 						</a>
-						<ul class="dropdown-menu dropdown-start" aria-labelledby="navbarDropdownMenuLink">
-							<li><a class="dropdown-item" href="{{route('profile',Auth::id())}}">Profile</a></li>
-							<li><a class="dropdown-item" href="{{ route ('logout')}}">Logout</a></li>
-						</ul>
+					</li>
+					<li class="nav-item">
+						<a class="nav-item" href="{{ route ('logout')}}">Logout</a>
 					</li>
 					@elseif(Auth::guard('company')->check())
 					<li class="nav-item">
