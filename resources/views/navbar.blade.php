@@ -37,11 +37,7 @@
 						<a class="nav-link"
 							href="{{url('/company/profile-perusahaan',Auth::guard('company')->user()->company_id)}}">Profile</a>
 					</li>
-					/*@elseif(Auth::guard('web')->check())
-					<li class="nav-item">
-						<a class="nav-link" href="{{route('profile',Auth::id())}}">Profile</a>
-					</li>*/
-
+					
 					@endif
 					<li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="{{route('homepage')}}">Beranda</a>
