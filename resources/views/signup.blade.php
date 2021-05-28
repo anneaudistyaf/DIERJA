@@ -32,7 +32,7 @@
                     @csrf
                     <h1 class="text-center">DAFTAR</h1>
                     @if (session('error'))
-                    <div class="alert alert-success text-center" role="alert">
+                    <div class="alert alert-danger text-center" role="alert">
                         {{ session('error')}}
                     </div>
                     @endif
