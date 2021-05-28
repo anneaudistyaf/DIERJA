@@ -44,7 +44,8 @@
                                 <div class="col-sm-5">
                                     <div class="foto-user">
                                         <div class="upload-foto text-center">
-                                            <img src="https://placehold.it/80x80" id="preview" class="text-center img-fluid">
+                                            <img src="https://placehold.it/80x80" id="preview"
+                                                class="text-center img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +92,7 @@
                                         <div class="col-sm-9">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" name="gender"
-                                                    id="inlineRadio1" value="laki">
+                                                    id="inlineRadio1" value="laki-laki">
                                                 <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                                             </div>
                                             <div class="form-check form-check-inline">

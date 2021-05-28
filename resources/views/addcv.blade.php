@@ -28,7 +28,7 @@
         <div class="col-md-4"></div>
         <div class="col-md-7">
             <div class="card">
-                <form action="{{route('add.cv')}}" method="POST">
+                <form action="{{route('add.cv',Auth::id())}}" method="POST">
                     @csrf
                     <div class="card-header text-center">
                         <h1>CURRICULUM VITAE</h1>
