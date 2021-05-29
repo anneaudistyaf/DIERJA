@@ -49,7 +49,7 @@ class AdminPelatihanController extends Controller
         try {
             if ($request->hasFile('file1') && $request->hasFile('file2')) {
                 $validator = Validator::make($request->all(), [
-                    'file1' => ['required', 'file', 'mimes:jpeg,png'],
+                    'file1' => ['required', 'file'],
                     'file2' => ['required', 'file', 'mimes:mp4'],
 
                     'judul' => ['required'],
@@ -59,8 +59,8 @@ class AdminPelatihanController extends Controller
 
                 ]);
                 if ($validator->fails()) {
-                    // dd($request->all());
 
+                    dd($request->all());
                     return redirect()->back()->with('failed', 'Failed Upload!')->withErrors($validator);
                 }
                 $file1 = $request->file('file1');
@@ -93,7 +93,7 @@ class AdminPelatihanController extends Controller
             }
         } catch (Exception $e) {
             DB::rollBack();
-            dd($request->all());
+
             return redirect()->back()->with('failed', 'Failed Upload!');
         }
         return redirect()->route('admin.index')->with('success', 'Edit Success');
@@ -105,12 +105,12 @@ class AdminPelatihanController extends Controller
         try {
             if ($request->hasFile('file1') && $request->hasFile('file2')) {
                 $validator = Validator::make($request->all(), [
-                    'file1' => ['required', 'file', 'mimes:jpeg,png'],
+                    'file1' => ['required', 'file', 'mimes:jpeg,jpg,png'],
                     'file2' => ['required', 'file', 'mimes:mp4'],
 
                     'judul' => ['required'],
                     'author' => ['required', 'string', 'max:255'],
-                    'kategori' => ['required', 'string', 'max:255'],
+                    // 'kategori' => ['required', 'string', 'max:255'],
                     'deskripsi' => ['required'],
 
                 ]);
