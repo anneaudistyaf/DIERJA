@@ -57,7 +57,7 @@
                                 <option selected>Choose...</option>
                                 <option value="1">Cooking</option>
                                 <option value="2">Programming</option>
-                                <option value="3">Musik</option>
+                                <option value="3 ">Musik</option>
                             </select>
                         </div>
                         <div class="col-sm-1"></div>

@@ -44,6 +44,7 @@ class AdminPelatihanController extends Controller
     }
     public function add(Request $request)
     {
+        // dd($request->kategori);
 
         try {
             if ($request->hasFile('file1') && $request->hasFile('file2')) {
@@ -53,7 +54,7 @@ class AdminPelatihanController extends Controller
 
                     'judul' => ['required'],
                     'author' => ['required', 'string', 'max:255'],
-                    'kategori' => ['required', 'string', 'max:255'],
+                    // 'kategori' => ['required'],
                     'deskripsi' => ['required'],
 
                 ]);
