@@ -25,9 +25,9 @@
                 {{ session('success')}}
             </div>
             @endif
-            @if(empty($jobs))
+            {{-- @if(empty($jobs))
             <h5><u>Tidak ada data pekerjaan</u></u></h5>
-            @endif
+            @endif --}}
             @php($i=0)
             @foreach ($hasilJobs as $item)
 

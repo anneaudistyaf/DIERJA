@@ -59,7 +59,7 @@
                         <div class="col-md-8">
                             <div class="card-body-profile">
                                 <h3 class="card-title">{{$usr->name}}</h5>
-                                    <p class="card-text">18 Mei 1995</p>
+                                    <p class="card-text">{{$usr->date_of_birth}}</p>
                                     <p class="card-text">{{$usr->gender}}</p>
                                     @foreach ($ds as $key =>$value)
                                     @if($usr->disabilitas == $key)

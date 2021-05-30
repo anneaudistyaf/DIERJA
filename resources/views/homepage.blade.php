@@ -163,9 +163,14 @@
 
                 <div class="card-body">
                   <h4 class="card-title">{{$item->user->name}}</h4>
-                  <h6>{{$item->user->disabilitas}}</h6>
-                  <p class="text-muted">Data Analyst</p>
-                  <p class="card border-secondary">{{$item->konten}}</p>
+                  @foreach ($disabilitas as $key =>$value)
+                  @if($item->disabilitas == $key)
+
+                  <h6>{{$value}}</h6>
+                  @endif
+                  @endforeach
+                  {{-- <p class="text-muted">Data Analyst</p> --}}
+                  <p class="card border-secondary">{!!$item->konten !!}</p>
                 </div>
               </div>
             </div>

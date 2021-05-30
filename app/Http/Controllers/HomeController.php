@@ -9,11 +9,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $disabilitas = [0 => 'Tuna rungu', 1 => 'Tuna wicara', 2 => 'Lumpuh', 3 => 'Disleksia',];
     public function index()
     {
         $jobs = jobs::all();
         $sharing = sharing_post::all();
         $pelatihan = pelatihan::all();
-        return view('homepage', compact('jobs', 'sharing', 'pelatihan'));
+        $disabilitas = $this->disabilitas;
+        return view('homepage', compact('jobs', 'sharing', 'pelatihan', 'disabilitas'));
     }
 }

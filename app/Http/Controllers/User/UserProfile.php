@@ -50,7 +50,7 @@ class UserProfile extends Controller
         $path = str_replace('\\', '/', public_path());
         // $file = $request->file('file');
         // $namafile = $file->getClientOriginalName();
-        // dd($namafile);
+        // dd($request->all());
         try {
             if ($request->hasFile('file')) {
                 $validator = Validator::make($request->all(), [

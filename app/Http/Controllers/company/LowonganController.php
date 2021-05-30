@@ -15,7 +15,7 @@ class LowonganController extends Controller
 {
     public function index()
     {
-        $jobs = jobs::where('company_id', Auth::guard('company')->user()->company_id);
+        $jobs = jobs::where('company_id', Auth::guard('company')->user()->company_id)->get();
         return view('lowongan-perusahaan', compact('jobs'));
     }
     public function show()
