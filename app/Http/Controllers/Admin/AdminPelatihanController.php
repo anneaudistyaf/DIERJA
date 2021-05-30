@@ -101,7 +101,7 @@ class AdminPelatihanController extends Controller
     public function update(Request $request, $id)
     {
         $pelatihan = pelatihan::find($id);
-
+        // dd($request->all());
         try {
             if ($request->hasFile('file1')) {
                 $validator = Validator::make($request->all(), [

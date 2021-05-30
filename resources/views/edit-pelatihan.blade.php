@@ -31,7 +31,8 @@
 
 
                 <br><br>
-                <form action="{{route('admin.update.pelatihan',$pelatihan->pelatihan_id)}}">
+                <form action="{{route('admin.update.pelatihan',$pelatihan->pelatihan_id)}}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <div class="col-sm-1"></div>
@@ -87,12 +88,11 @@
 
                                 <div class="form-group">
                                     <br>
-                                    <h5>Upload Teaser</h5>
-                                    <label for="exampleFormControlFile1">{{$pelatihan->thumbnail}}</label> <br>
-                                    <input type="file" name="file1" accept="video/mp4" class="form-control-file"
-                                        id="teaser">
-                                    <p>Acceptable format : mp4 only
-                                        max size is 60mb and min size is 2mb</p>
+                                    <h5>Upload Thumbnail</h5>
+                                    <label for="exampleFormControlFile1">Choose File</label> <br>
+                                    <input type="file" name="file1" class="form-control-file" id="teaser">
+                                    <p>Acceptable format : jpe,jpg,png only
+                                        max size is 2mb</p>
                                 </div>
 
                             </div>
