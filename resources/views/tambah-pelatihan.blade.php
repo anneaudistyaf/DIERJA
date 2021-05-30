@@ -102,7 +102,16 @@
                     <br>
 
                     <div class="form-foto-pelatihan">
-                        <div class="row">
+                        <div class="form-group row">
+                            <h5>Upload Video</h5>
+                            <div class="col-sm-1"></div>
+                            <label for="namapelatihan" class="col-sm-2 col-form-label">insert link video</label>
+                            <div class="col-sm-8">
+                                <input name="video" type="text" class="form-control" id="namapelatihan">
+                            </div>
+                            <div class="col-sm-1"></div>
+                        </div>
+                        {{-- <div class="row">
                             <div class="col-sm-1"></div>
                             <div class="col-sm-5">
                                 <div class="foto-pelatihan">
@@ -117,16 +126,16 @@
                                 <div class="form-group">
                                     <br>
                                     <h5>Upload Video</h5>
-                                    <label for="exampleFormControlFile1">Choose file</label> <br>
-                                    <input type="file" name="file2" accept="video/mp4" class="form-control-file"
-                                        id="pelatihan">
-                                    <p>Acceptable format : mp4 only
-                                        max size is 60mb and min size is 2mb</p>
+                                    <label for="exampleFormControlFile1">insert link video</label> <br>
+                                    <div class="col-sm-8">
+                                        <input name="video" type="text" class="form-control" id="namapelatihan">
+                                    </div>
+
                                 </div>
 
                             </div>
                             <div class="col-sm-2"></div>
-                        </div>
+                        </div> --}}
                         <br><br>
                         <div class="text-center">
                             <button class="btn btn-primary">SIMPAN</button>

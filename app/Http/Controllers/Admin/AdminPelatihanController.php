@@ -44,13 +44,13 @@ class AdminPelatihanController extends Controller
     }
     public function add(Request $request)
     {
-        // dd($request->kategori);
+        // dd($request->all());
 
         try {
-            if ($request->hasFile('file1') && $request->hasFile('file2')) {
+            if ($request->hasFile('file1')) {
                 $validator = Validator::make($request->all(), [
                     'file1' => ['required', 'file'],
-                    'file2' => ['required', 'file', 'mimes:mp4'],
+                    'video' => ['required'],
 
                     'judul' => ['required'],
                     'author' => ['required', 'string', 'max:255'],
@@ -60,22 +60,22 @@ class AdminPelatihanController extends Controller
                 ]);
                 if ($validator->fails()) {
 
-                    dd($request->all());
+                    // dd($request->all());
                     return redirect()->back()->with('failed', 'Failed Upload!')->withErrors($validator);
                 }
                 $file1 = $request->file('file1');
                 $namafile1 = time() . "_" . $file1->getClientOriginalName();
                 $file1->move('Thumbnail', $namafile1);
-                $video = $request->file('file2');
-                $namavideo = time() . "_" . $video->getClientOriginalName();
-                $video->move('video_pelatihan', $namavideo);
+                // $video = $request->file('file2');
+                // $namavideo = time() . "_" . $video->getClientOriginalName();
+                // $video->move('video_pelatihan', $namavideo);
                 DB::beginTransaction();
                 $pelatihan = new pelatihan;
                 $pelatihan->judul = $request->judul;
                 $pelatihan->author = $request->author;
                 $pelatihan->kategori_id = $request->kategori;
                 $pelatihan->thumbnail = $namafile1;
-                $pelatihan->video = $namavideo;
+                $pelatihan->video = $request->video;
                 $pelatihan->deskripsi = $request->deskripsi;
                 // $pelatihan->judul = 'ASsasdsa';
                 // $pelatihan->author = 'asdasdasd';
@@ -103,10 +103,10 @@ class AdminPelatihanController extends Controller
         $pelatihan = pelatihan::find($id);
 
         try {
-            if ($request->hasFile('file1') && $request->hasFile('file2')) {
+            if ($request->hasFile('file1')) {
                 $validator = Validator::make($request->all(), [
                     'file1' => ['required', 'file', 'mimes:jpeg,jpg,png'],
-                    'file2' => ['required', 'file', 'mimes:mp4'],
+                    // 'file2' => ['required', 'file', 'mimes:mp4'],
 
                     'judul' => ['required'],
                     'author' => ['required', 'string', 'max:255'],
@@ -122,15 +122,15 @@ class AdminPelatihanController extends Controller
                 $file1 = $request->file('file1');
                 $namafile1 = time() . "_" . $file1->getClientOriginalName();
                 $file1->move('Thumbnail', $namafile1);
-                $video = $request->file('file2');
-                $namavideo = $video->getClientOriginalName();
-                $video->move('video_pelatihan', $namavideo);
+                // $video = $request->file('file2');
+                // $namavideo = $video->getClientOriginalName();
+                // $video->move('video_pelatihan', $namavideo);
                 DB::beginTransaction();
                 $pelatihan->judul = $request->judul;
                 $pelatihan->author = $request->author;
                 $pelatihan->kategori_id = $request->kategori;
                 $pelatihan->thumbnail = $namafile1;
-                $pelatihan->video = $namavideo;
+                $pelatihan->video = $request->video;
                 $pelatihan->deskripsi = $request->deskripsi;
 
                 $pelatihan->update();

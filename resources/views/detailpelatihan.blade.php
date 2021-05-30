@@ -24,9 +24,13 @@
         <div class="judul">
             <h1>{{$pelatihan->judul}}</h1>
             <h5>oleh {{$pelatihan->author}}</h5>
-            <video width="320" height="240" controls>
-                <source src="{{url('../video_pelatihan/'.$pelatihan->video)}}" type="video/mp4">
-            </video>
+            {{-- <video width="320" height="240" controls>
+                <source src="{{$pelatihan->video}}" type="video/mp4">
+            </video> --}}
+            <iframe width="320" height="240" controls src="{{$pelatihan->video}}">
+                https://www.youtube.com/embed/RUTV_5m4VeI
+            </iframe>
+
         </div>
         <div class="row">
             <div class="col-sm-2"></div>
