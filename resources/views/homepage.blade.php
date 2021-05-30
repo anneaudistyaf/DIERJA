@@ -164,7 +164,7 @@
                 <div class="card-body">
                   <h4 class="card-title">{{$item->user->name}}</h4>
                   @foreach ($disabilitas as $key =>$value)
-                  @if($item->disabilitas == $key)
+                  @if($item->user->disabilitas == $key)
 
                   <h6>{{$value}}</h6>
                   @endif

@@ -63,8 +63,8 @@
                         <div class="col-sm-10">
                             <div class="card-body">
                                 <h4 class="card-title">{{$item->user->name}}</h4>
-                                @foreach ($disabilitas as $key =>$value)
-                                @if($item->disabilitas == $key)
+                                @foreach ($ds as $key => $value)
+                                @if($item->user->disabilitas == $key)
 
                                 <h6>{{$value}}</h6>
                                 @endif
