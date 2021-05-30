@@ -66,7 +66,8 @@
                             {{-- 
                             @if($item->kategori_id == 2) --}}
                             <th scope="col-md-4">
-                                <img src="{{url('../Thumbnail/'.$item->thumbnail)}}" class="img-fluid" alt=""><br>
+                                <img height="392" width="234" src="{{url('../Thumbnail/'.$item->thumbnail)}}"
+                                    class="img-fluid" alt=""><br>
                                 <a href="{{url('/detailpelatihan',$item->pelatihan_id)}}"
                                     class="text-center">{{$item->judul}}</a>
                             </th>
