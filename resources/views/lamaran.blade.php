@@ -25,7 +25,10 @@
                 {{ session('success')}}
             </div>
             @endif
-            @php($i=0);
+            @if(empty($jobs))
+            <h5><u>Tidak ada data pekerjaan</u></u></h5>
+            @endif
+            @php($i=0)
             @foreach ($hasilJobs as $item)
 
             <h3 class="text-center">Pelamar {{$jobs[$i]->posisi}} </h3>
@@ -86,7 +89,7 @@
             @endforeach
             <br>
 
-            @php($a=0);
+            @php($a=0)
             @foreach ($hasilJobs as $array)
             <div class="accept">
 

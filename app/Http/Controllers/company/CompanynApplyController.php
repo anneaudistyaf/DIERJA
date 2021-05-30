@@ -20,15 +20,17 @@ class CompanynApplyController extends Controller
         // dd(Auth::guard('company')->user()->company_id);
         $jobs =  DB::table('apply_lowongans')
             ->select('posisi')
+            ->where('company_id', Auth::guard('company')->user()->company_id)
             ->groupBy('posisi')
             ->get();
+        // dd($jobs);
 
         $hasilJobs = array();
         foreach ($jobs as $data) {
             $array_detail = ApplyLowongan::where([
-                    ['posisi', $data->posisi],
-                    ['company_id', Auth::guard('company')->user()->company_id],
-                ])
+                ['posisi', $data->posisi],
+                ['company_id', Auth::guard('company')->user()->company_id],
+            ])
                 ->orderBy('jobs_id', 'asc')
                 ->get();
             array_push($hasilJobs, $array_detail);
