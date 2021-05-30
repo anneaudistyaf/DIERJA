@@ -180,12 +180,16 @@
                 <div class="card mb-3" style="max-width: 750px;">
                     <div class="card-body-cv">
                         <h3 class="card-title">SOSIAL MEDIA</h3>
+                        @if($cv->sosialMedia == "Facebook")
                         <p class="card-text"><img class="img-fluid" src="{{url('../images/facebook 1.png')}}"
                                 alt="">{{$cv->sosialMedia}}</p>
+                        @elseif($cv->sosialMedia == "Twitter")
                         <p class="card-text"><img class="img-fluid" src="{{url('../images/twitter 1.png')}}"
                                 alt="">{{$cv->sosialMedia}}</p>
+                        @else
                         <p class="card-text"><img class="img-fluid" src="{{url('../images/instagram 1.png')}}"
                                 alt="">{{$cv->sosialMedia}}</p>
+                        @endif
                     </div>
                 </div>
             </div>
