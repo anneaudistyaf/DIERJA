@@ -23,6 +23,7 @@
     <div class="detail-pelatihan">
         <div class="judul">
             <h1>{{$pelatihan->judul}}</h1>
+
             <h5>oleh {{$pelatihan->author}}</h5>
             {{-- <video width="320" height="240" controls>
                 <source src="{{$pelatihan->video}}" type="video/mp4">

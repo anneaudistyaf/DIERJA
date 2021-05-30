@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\ApplyLowongan;
 use App\Models\company;
+use App\Models\cv;
 use App\Models\jobs;
 use App\Models\User;
 use Exception;
@@ -40,7 +41,11 @@ class LowonganUserController extends Controller
     {
         // dd($id);
         $jobs = jobs::find($id);
+        $cv = cv::where('id', Auth::id())->first();
 
+        if (empty($cv)) {
+            return redirect()->back()->with('failed', 'Lengkapi CV terlebih dahulu di halaman profile');
+        }
         $user = User::where('id', Auth::id())->first();
 
         try {

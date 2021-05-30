@@ -22,6 +22,15 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-5">
                 <h1>{{$jobs->posisi}}</h1>
+                @if (session('success'))
+                <div class="alert alert-success text-center" role="alert">
+                    {{ session('success')}}
+                </div>
+                @elseif(session('failed'))
+                <div class="alert alert-danger text-center" role="alert">
+                    {{ session('failed')}}
+                </div>
+                @endif
                 <a href="{{route('detail.perusahaan',$jobs->company->company_id)}}">
                     <p>PT.{{$jobs->company->company_name}}</p>
                 </a>
